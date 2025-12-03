@@ -8,16 +8,16 @@
 </p>
 
 <p align="center">
-- CLI▶Studio: Image, video and audio manipulation.<br>
-- Synapxis: Graph view interface with jrnl integration.<br>
-- LXM: Linux manual pages search and command builder.
+  <strong>CLI▶Studio:</strong> Image, video and audio manipulation.<br>
+  <strong>Synapxis:</strong> Graph view interface with jrnl integration.<br>
+  <strong>LXM:</strong> Linux manual pages search and command builder.
 </p>
 
 <p align="center">
   Unleash your terminal!
 </p>
 
-<hr>
+##
 
 <p align="center">
   &copy; CodeFXR. All rights reserved.

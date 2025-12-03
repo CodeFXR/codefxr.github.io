@@ -8,8 +8,8 @@
 </p>
 
 <p align="center">
-- CLI▶Studio: Image, video and audio manipulation.
-- Synapxis: Graph view interface with jrnl integration.
+- CLI▶Studio: Image, video and audio manipulation.<br>
+- Synapxis: Graph view interface with jrnl integration.<br>
 - LXM: Linux manual pages search and command builder.
 </p>
 

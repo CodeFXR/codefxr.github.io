@@ -35,7 +35,7 @@ export default function Home() {
         
         {/* BADGE UPDATE: No pulse. Now uses a subtle Blue Glow on HOVER. */}
         <div className="mb-8 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-md shadow-sm transition-all duration-300 hover:bg-slate-900 hover:border-blue-500/50 hover:shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] cursor-default">
-          <span className="text-xs font-semibold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
+          <span className="text-xs font-semibold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
             Unleash your terminal!
           </span>
         </div>
@@ -65,7 +65,7 @@ export default function Home() {
       {/* --- Products Section --- */}
       <section id="products" className="px-6 py-20 bg-slate-900/50 border-t border-slate-800">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center">App Suite</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Application Suite</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Product 1: CLI-Studio (Cyan Theme) */}

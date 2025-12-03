@@ -1,47 +1,50 @@
 import Image from "next/image";
 import Link from "next/link";
+// Keeping imports just in case
 import { ArrowRight, Terminal, Share2, Layers } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white selection:bg-green-500 selection:text-slate-900">
+    <main className="min-h-screen bg-slate-950 text-white selection:bg-green-500 selection:text-slate-900 overflow-x-hidden">
       
       {/* --- Navigation --- */}
-      <nav className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
-        <div className="flex items-center gap-2">
-          {/* Ensure you have a logo.png in your 'public' folder */}
-          <div className="relative w-8 h-8">
+      {/* Not sticky, just clean glass effect */}
+      <nav className="relative z-50 w-full border-b border-white/5 bg-slate-950/60 backdrop-blur-md">
+        <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+          <div className="flex items-center gap-2">
+            <div className="relative w-8 h-8">
              <Image 
                src="/logo.png" 
                alt="CodeFXR Logo" 
                fill 
                className="object-contain"
              />
+            </div>
+            <span className="text-xl font-bold tracking-tight">CodeFXR</span>
           </div>
-          <span className="text-xl font-bold tracking-tight">CodeFXR</span>
-        </div>
-        <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
-          <Link href="#products" className="hover:text-green-400 transition-colors">Products</Link>
-          <Link href="#about" className="hover:text-blue-400 transition-colors">About</Link>
-          <Link href="#contact" className="hover:text-white transition-colors">Contact</Link>
+          <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+            <Link href="#products" className="hover:text-green-400 transition-colors">Products</Link>
+            <Link href="#about" className="hover:text-blue-400 transition-colors">About</Link>
+            <Link href="#contact" className="hover:text-white transition-colors">Contact</Link>
+          </div>
         </div>
       </nav>
 
       {/* --- Hero Section --- */}
-      <section className="flex flex-col items-center justify-center text-center px-6 pt-20 pb-32 max-w-5xl mx-auto">
+      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-20 pb-32 max-w-5xl mx-auto">
         
-        {/* Animated Badge */}
-        <div className="mb-6 px-3 py-1 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-sm">
-          <span className="text-xs font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
+        {/* BADGE UPDATE: No pulse. Now uses a subtle Blue Glow on HOVER. */}
+        <div className="mb-8 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-md shadow-sm transition-all duration-300 hover:bg-slate-900 hover:border-blue-500/50 hover:shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] cursor-default">
+          <span className="text-xs font-semibold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
             Unleash your terminal!
           </span>
         </div>
 
-        {/* Main Title with Gradient */}
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+        {/* Main Title - Standard size */}
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
           The Foundation for <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-teal-400 to-green-400">
-            Terminal User Interface
+            Terminal User Interfaces
           </span>
         </h1>
 
@@ -50,7 +53,7 @@ export default function Home() {
         </p>
 
         <div className="flex gap-4">
-          <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300">
+          <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_-5px_rgba(255,255,255,0.5)]">
             Get Started
           </button>
           <button className="px-8 py-3 rounded-lg font-bold border border-slate-700 hover:border-blue-500 text-white hover:bg-slate-900 transition-all duration-300">
@@ -65,28 +68,52 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center">App Suite</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Product 1: CLI-Studio */}
+            {/* Product 1: CLI-Studio (Cyan Theme) */}
             <ProductCard 
-              icon={<Terminal className="w-8 h-8 text-blue-400" />}
+              icon={
+                <Image 
+                  src="/logo1.png" 
+                  alt="CLI-Studio Icon" 
+                  width={40} 
+                  height={40} 
+                  className="object-contain"
+                />
+              }
               title="CLI▶Studio"
-              description="User interface for image, video and audio manipulation."
-              color="blue"
+              description="Image, video and audio manipulation."
+              color="cyan"
             />
 
-            {/* Product 2: Synapxis */}
+            {/* Product 2: Synapxis (Amber Theme) */}
             <ProductCard 
-              icon={<Share2 className="w-8 h-8 text-teal-400" />}
+              icon={
+                <Image 
+                  src="/logo2.png" 
+                  alt="Synapxis Icon" 
+                  width={40} 
+                  height={40} 
+                  className="object-contain"
+                />
+              }
               title="Synapxis"
-              description="Graph view user interface with jrnl integration."
-              color="teal"
+              description="Graph view interface with jrnl integration."
+              color="amber"
             />
 
-            {/* Product 3: LXM */}
+            {/* Product 3: LXM (Blue Theme) */}
             <ProductCard 
-              icon={<Layers className="w-8 h-8 text-green-400" />}
+              icon={
+                <Image 
+                  src="/logo3.png" 
+                  alt="LXM Icon" 
+                  width={40} 
+                  height={40} 
+                  className="object-contain"
+                />
+              }
               title="LXM"
-              description="Linux manual pages user interface, search and command builder."
-              color="green"
+              description="Linux manual pages search and command builder."
+              color="blue"
             />
           </div>
         </div>
@@ -100,17 +127,29 @@ export default function Home() {
   );
 }
 
-// Simple Component for the Product Cards to keep code clean
+// ProductCard with Colored Card Shadow Logic
 function ProductCard({ icon, title, description, color }: any) {
-  // We dynamically set the border hover color based on props
-  const hoverColor = {
-    blue: "group-hover:border-blue-500/50",
-    teal: "group-hover:border-teal-500/50",
-    green: "group-hover:border-green-500/50",
-  }[color as "blue" | "teal" | "green"] || "group-hover:border-white";
+  
+  // Define styles for each color theme
+  const theme = {
+    cyan: {
+      // Cyan border and Cyan glow on the CARD itself
+      styles: "group-hover:border-cyan-500/50 hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)]"
+    },
+    amber: {
+      // Amber border and Amber glow on the CARD itself
+      styles: "group-hover:border-amber-500/50 hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]"
+    },
+    blue: {
+      // Blue border and Blue glow on the CARD itself
+      styles: "group-hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]"
+    },
+  }[color as "cyan" | "amber" | "blue"] || { 
+    styles: "group-hover:border-white hover:shadow-xl" 
+  };
 
   return (
-    <div className={`group p-8 rounded-2xl bg-slate-950 border border-slate-800 ${hoverColor} transition-all duration-300 hover:shadow-2xl hover:-translate-y-1`}>
+    <div className={`group p-8 rounded-2xl bg-slate-950 border border-slate-800 ${theme.styles} transition-all duration-300 hover:-translate-y-1`}>
       <div className="mb-4 p-3 bg-slate-900/50 rounded-lg inline-block">
         {icon}
       </div>

@@ -7,9 +7,11 @@
   This repository hosts the official landing page for our suite of applications.
 </p>
 
+<p align="center">
 - CLI▶Studio: Image, video and audio manipulation.
 - Synapxis: Graph view interface with jrnl integration.
 - LXM: Linux manual pages search and command builder.
+</p>
 
 <p align="center">
   Unleash your terminal!

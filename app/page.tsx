@@ -21,11 +21,17 @@ export default function Home() {
              />
             </div>
             <span className="text-xl font-bold tracking-tight">CodeFXR</span>
-          </div>
+</div>
           <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
-            <Link href="#products" className="hover:text-green-400 transition-colors">Products</Link>
-            <Link href="#about" className="hover:text-blue-400 transition-colors">About</Link>
-            <Link href="#contact" className="hover:text-white transition-colors">Contact</Link>
+            <Link href="#products" className="hover:text-green-400 transition-colors">Applications</Link>
+            <Link 
+              href="https://github.com/CodeFXR/codefxr.github.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition-colors"
+            >
+              GitHub
+            </Link>
           </div>
         </div>
       </nav>

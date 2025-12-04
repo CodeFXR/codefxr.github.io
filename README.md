@@ -8,9 +8,9 @@
 </p>
 
 <p align="center">
-  <strong>CLI▶Studio:</strong> Image, video and audio manipulation.<br>
-  <strong>Synapxis:</strong> Graph view interface with jrnl integration.<br>
-  <strong>LXM:</strong> Linux manual pages search and command builder.
+  <a href="https://github.com/CodeFXR/CLI-Studio">CLI▶Studio</a> • 
+  <a href="https://github.com/CodeFXR/Synapxis">Synapxis</a> • 
+  <a href="https://github.com/CodeFXR/LXM">LXM</a>
 </p>
 
 <p align="center">

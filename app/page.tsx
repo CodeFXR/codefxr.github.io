@@ -8,8 +8,7 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-white selection:bg-green-500 selection:text-slate-900 overflow-x-hidden">
       
       {/* --- Navigation --- */}
-      {/* Not sticky, just clean glass effect */}
-      <nav className="relative z-50 w-full border-b border-white/5 bg-slate-950/60 backdrop-blur-md">
+      <nav className="relative z-50 w-full border-b border-slate-800 bg-slate-950/60 backdrop-blur-md">
         <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
             <div className="relative w-8 h-8">
@@ -21,7 +20,7 @@ export default function Home() {
              />
             </div>
             <span className="text-xl font-bold tracking-tight">CodeFXR</span>
-</div>
+          </div>
           <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
             <Link href="#products" className="hover:text-green-400 transition-colors">Applications</Link>
             <Link 
@@ -39,14 +38,14 @@ export default function Home() {
       {/* --- Hero Section --- */}
       <section className="relative flex flex-col items-center justify-center text-center px-6 pt-20 pb-32 max-w-5xl mx-auto">
         
-        {/* BADGE UPDATE: No pulse. Now uses a subtle Blue Glow on HOVER. */}
+        {/* Badge */}
         <div className="mb-8 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-md shadow-sm transition-all duration-300 hover:bg-slate-900 hover:border-blue-500/50 hover:shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] cursor-default">
           <span className="text-xs font-semibold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
             Unleash your terminal!
           </span>
         </div>
 
-        {/* Main Title - Standard size */}
+        {/* Main Title */}
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
           The Foundation for <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-teal-400 to-green-400">
@@ -59,20 +58,21 @@ export default function Home() {
         </p>
 
         <div className="flex gap-4">
-          {/* Get Started -> /get-started */}
+          {/* Get Started Button */}
           <Link href="/get-started">
-            <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300">
+            <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_-5px_rgba(255,255,255,0.5)]">
               Get Started
             </button>
           </Link>
           
-          {/* View Documentation -> /docs/synapxis (Since it's the only one ready) */}
+          {/* Documentation Button */}
           <Link href="/docs/synapxis">
             <button className="px-8 py-3 rounded-lg font-bold border border-slate-700 hover:border-blue-500 text-white hover:bg-slate-900 transition-all duration-300">
               View Documentation
             </button>
           </Link>
         </div>
+      </section> 
 
       {/* --- Products Section --- */}
       <section id="products" className="px-6 py-20 bg-slate-900/50 border-t border-slate-800">

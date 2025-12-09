@@ -3,8 +3,7 @@
   <img src="public/logo.png" alt="CodeFXR Logo" width="150" />
 </p>
 <p align="center">
-  CodeFXR is the foundation for next-generation terminal user interfaces.<br> 
-  This repository hosts the official landing page for our suite of applications.
+  Central landing page for the CodeFXR application suite.<br> 
 </p>
 
 <p align="center">

@@ -53,8 +53,9 @@ export default function GetStarted() {
             </div>
           </div>
 
-          {/* 2. Synapxis Card (Amber Theme - Active) */}
-          <div className="bg-slate-900/50 border border-amber-500/30 rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:border-amber-400/50 hover:shadow-[0_0_30px_-10px_rgba(245,158,11,0.3)] transition-all">
+          {/* 2. Synapxis Card (Amber Theme) */}
+          {/* UPDATED: Removed default colored border. Now matches the others (slate-800) and lights up on hover. */}
+          <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:border-amber-500/50 hover:shadow-[0_0_30px_-10px_rgba(245,158,11,0.3)] transition-all">
             {/* Watermark Logo */}
             <div className="absolute -top-6 -right-6 opacity-10 group-hover:opacity-30 transition-all duration-500 rotate-12 group-hover:rotate-0">
                 <Image src="/logo2.png" alt="Synapxis Logo" width={140} height={140} className="object-contain" />
@@ -67,14 +68,15 @@ export default function GetStarted() {
               </span>
               
               <div className="mb-2 text-sm text-slate-400">Run auto-installer:</div>
-              {/* Note: I added overflow handling so the long command doesn't break the card */}
-              <div className="bg-slate-950 rounded-lg p-4 border border-slate-800 font-mono text-xs text-amber-400 mb-8 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-slate-700">
+              {/* UPDATED: Command text is now White (text-white) */}
+              <div className="bg-slate-950 rounded-lg p-4 border border-slate-800 font-mono text-xs text-white mb-8 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-slate-700">
                 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/CodeFXR/Synapxis/refs/heads/Synapxis/install.sh)"
               </div>
 
               <div className="mt-auto">
                 <Link href="/docs/synapxis">
-                  <button className="w-full py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold transition-colors flex items-center justify-center gap-2">
+                  {/* UPDATED: Button is White by default, Amber on hover */}
+                  <button className="w-full py-2.5 rounded-lg bg-white text-slate-950 font-bold transition-all duration-300 flex items-center justify-center gap-2 hover:bg-amber-500 hover:text-white hover:shadow-lg">
                     <BookOpen className="w-4 h-4" />
                     Read Full Docs
                   </button>

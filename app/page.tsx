@@ -93,7 +93,7 @@ export default function Home() {
               }
               title="CLI▶Studio"
               description="Image, video and audio manipulation."
-              color="cyan"
+              color="green"
             />
 
             {/* Product 2: Synapxis (Amber Theme) */}
@@ -144,6 +144,10 @@ function ProductCard({ icon, title, description, color }: any) {
   
   // Define styles for each color theme
   const theme = {
+    green: {
+      // NEW: Green border and Green glow
+      styles: "group-hover:border-green-500/50 hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.3)]"
+    },
     cyan: {
       // Cyan border and Cyan glow on the CARD itself
       styles: "group-hover:border-cyan-500/50 hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)]"
@@ -156,7 +160,7 @@ function ProductCard({ icon, title, description, color }: any) {
       // Blue border and Blue glow on the CARD itself
       styles: "group-hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]"
     },
-  }[color as "cyan" | "amber" | "blue"] || { 
+  }[color as "green" | "cyan" | "amber" | "blue"] || { 
     styles: "group-hover:border-white hover:shadow-xl" 
   };
 

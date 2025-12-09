@@ -59,14 +59,20 @@ export default function Home() {
         </p>
 
         <div className="flex gap-4">
-          <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_-5px_rgba(255,255,255,0.5)]">
-            Get Started
-          </button>
-          <button className="px-8 py-3 rounded-lg font-bold border border-slate-700 hover:border-blue-500 text-white hover:bg-slate-900 transition-all duration-300">
-            View Documentation
-          </button>
+          {/* Get Started -> /get-started */}
+          <Link href="/get-started">
+            <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300">
+              Get Started
+            </button>
+          </Link>
+          
+          {/* View Documentation -> /docs/synapxis (Since it's the only one ready) */}
+          <Link href="/docs/synapxis">
+            <button className="px-8 py-3 rounded-lg font-bold border border-slate-700 hover:border-blue-500 text-white hover:bg-slate-900 transition-all duration-300">
+              View Documentation
+            </button>
+          </Link>
         </div>
-      </section>
 
       {/* --- Products Section --- */}
       <section id="products" className="px-6 py-20 bg-slate-900/50 border-t border-slate-800">

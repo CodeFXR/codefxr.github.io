@@ -8,7 +8,8 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-white selection:bg-green-500 selection:text-slate-900 overflow-x-hidden">
       
       {/* --- Navigation --- */}
-      <nav className="relative z-50 w-full border-b border-slate-800 bg-slate-950/60 backdrop-blur-md">
+      {/* UPDATE: Changed to 'fixed top-0' for sticky glass effect */}
+      <nav className="fixed top-0 z-50 w-full border-b border-slate-800 bg-slate-950/60 backdrop-blur-md">
         <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
             <div className="relative w-8 h-8">
@@ -36,7 +37,8 @@ export default function Home() {
       </nav>
 
       {/* --- Hero Section --- */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-20 pb-32 max-w-5xl mx-auto">
+      {/* UPDATE: Changed pt-20 to pt-32 to prevent content hiding behind fixed nav */}
+      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-32 pb-32 max-w-5xl mx-auto">
         
         {/* Badge */}
         <div className="mb-8 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-md shadow-sm transition-all duration-300 hover:bg-slate-900 hover:border-blue-500/50 hover:shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] cursor-default">
@@ -72,7 +74,7 @@ export default function Home() {
             </button>
           </Link>
         </div>
-      </section> 
+      </section>
 
       {/* --- Products Section --- */}
       <section id="products" className="px-6 py-20 bg-slate-900/50 border-t border-slate-800">
@@ -93,7 +95,7 @@ export default function Home() {
               }
               title="CLI▶Studio"
               description="Image, video and audio manipulation."
-              color="green"
+              color="cyan"
             />
 
             {/* Product 2: Synapxis (Amber Theme) */}
@@ -143,25 +145,19 @@ export default function Home() {
 function ProductCard({ icon, title, description, color }: any) {
   
   // Define styles for each color theme
+  // UPDATE: Removed colored borders to match the Get Started page style
   const theme = {
-    green: {
-      // NEW: Green border and Green glow
-      styles: "group-hover:border-green-500/50 hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.3)]"
-    },
     cyan: {
-      // Cyan border and Cyan glow on the CARD itself
-      styles: "group-hover:border-cyan-500/50 hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)]"
+      styles: "hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)]"
     },
     amber: {
-      // Amber border and Amber glow on the CARD itself
-      styles: "group-hover:border-amber-500/50 hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]"
+      styles: "hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]"
     },
     blue: {
-      // Blue border and Blue glow on the CARD itself
-      styles: "group-hover:border-blue-500/50 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]"
+      styles: "hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]"
     },
-  }[color as "green" | "cyan" | "amber" | "blue"] || { 
-    styles: "group-hover:border-white hover:shadow-xl" 
+  }[color as "cyan" | "amber" | "blue"] || { 
+    styles: "hover:shadow-xl" 
   };
 
   return (

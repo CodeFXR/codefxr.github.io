@@ -1,17 +1,49 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, BookOpen } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 export default function GetStarted() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white pt-24 px-6 pb-20">
-      <div className="max-w-6xl mx-auto">
+    <main className="min-h-screen bg-slate-950 text-white selection:bg-green-500 selection:text-slate-900 overflow-x-hidden">
+
+      {/* --- Navigation (Sticky) --- */}
+      <nav className="fixed top-0 z-50 w-full border-b border-slate-800 bg-slate-950/60 backdrop-blur-md">
+        <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
+          
+          {/* Logo -> Links to Home */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative w-8 h-8">
+             <Image 
+               src="/logo.png" 
+               alt="CodeFXR Logo" 
+               fill 
+               className="object-contain"
+             />
+            </div>
+            <span className="text-xl font-bold tracking-tight group-hover:text-slate-200 transition-colors">CodeFXR</span>
+          </Link>
+
+          {/* Right Side Links */}
+          <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+            {/* Removed "Applications" link */}
+            <Link 
+              href="https://github.com/CodeFXR/codefxr.github.io" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition-colors"
+            >
+              GitHub
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* --- Main Content --- */}
+      {/* pt-32 ensures content starts below the sticky nav */}
+      <div className="max-w-6xl mx-auto pt-32 px-6 pb-20">
         
         {/* Header */}
         <div className="text-center mb-16">
-          <Link href="/" className="inline-flex items-center text-slate-400 hover:text-white mb-6 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
-          </Link>
           
           {/* Gradient Title */}
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -29,7 +61,6 @@ export default function GetStarted() {
         <div className="grid md:grid-cols-3 gap-8">
           
           {/* 1. CLI-Studio Card (Green Theme) */}
-          {/* Removed hover:border-green-500/50. Kept only the shadow glow. */}
           <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 flex flex-col relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.3)]">
             {/* Watermark Logo */}
             <div className="absolute -top-6 -right-6 opacity-10 group-hover:opacity-30 transition-all duration-500 rotate-12 group-hover:rotate-0">
@@ -54,8 +85,7 @@ export default function GetStarted() {
             </div>
           </div>
 
-          {/* 2. Synapxis Card (Amber Theme) */}
-          {/* Removed hover:border-amber-500/50. Kept only the shadow glow. */}
+          {/* 2. Synapxis Card (Amber Theme - Active) */}
           <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 flex flex-col relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]">
             {/* Watermark Logo */}
             <div className="absolute -top-6 -right-6 opacity-10 group-hover:opacity-30 transition-all duration-500 rotate-12 group-hover:rotate-0">
@@ -85,7 +115,6 @@ export default function GetStarted() {
           </div>
 
           {/* 3. LXM Card (Blue Theme) */}
-          {/* Removed hover:border-blue-500/50. Kept only the shadow glow. */}
           <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 flex flex-col relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]">
             {/* Watermark Logo */}
             <div className="absolute -top-6 -right-6 opacity-10 group-hover:opacity-30 transition-all duration-500 rotate-12 group-hover:rotate-0">

@@ -166,23 +166,34 @@ git --version`}
         <h2 className="text-2xl font-bold text-white mb-6 border-l-4 border-green-500 pl-4">Installation</h2>
         
         {/* Automatic */}
-        <div className="mb-10">
-          <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            Option A: Automatic <span className="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20">Recommended</span>
-          </h3>
-          <p className="mb-4 text-slate-400">Creates a sandboxed environment (.venv), compiles the Rust engine, and sets up aliases.</p>
-          {/* Added max-w constraints for mobile safety */}
-          <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 shadow-lg shadow-green-900/10 max-w-[85vw] md:max-w-none">
-            <code className="text-green-300">
-              /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/CodeFXR/Synapxis/refs/heads/Synapxis/install.sh)"
-            </code>
-          </pre>
-          <div className="mt-4 grid grid-cols-2 gap-4 text-sm text-slate-500 font-mono">
-            <div className="bg-slate-900/50 p-2 rounded border border-slate-800">Install Location: ~/.synapxis</div>
-            <div className="bg-slate-900/50 p-2 rounded border border-slate-800">Data Location: ~/.synapxis_cli/notes.json</div>
-            <div className="bg-slate-900/50 p-2 rounded border border-slate-800 col-span-2">Aliases: synapxis, snx</div>
+          <div className="mb-10">
+            <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+              Option A: Automatic <span className="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20">Recommended</span>
+            </h3>
+            <p className="mb-4 text-slate-400">Creates a sandboxed environment (.venv), compiles the Rust engine, and sets up aliases.</p>
+            
+            <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 shadow-lg shadow-green-900/10 max-w-[85vw] md:max-w-none">
+              <code className="text-green-300">
+                /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/CodeFXR/Synapxis/refs/heads/Synapxis/install.sh)"
+              </code>
+            </pre>
+
+            {/* FIXED GRID: 
+                1. Changed grid-cols-2 to grid-cols-1 md:grid-cols-2 (Stack on mobile)
+                2. Added 'break-all' to force the long path to wrap 
+            */}
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-500 font-mono">
+              <div className="bg-slate-900/50 p-2 rounded border border-slate-800 break-all">
+                Install Location: ~/.synapxis
+              </div>
+              <div className="bg-slate-900/50 p-2 rounded border border-slate-800 break-all">
+                Data Location: ~/.synapxis_cli/notes.json
+              </div>
+              <div className="bg-slate-900/50 p-2 rounded border border-slate-800 md:col-span-2">
+                Aliases: synapxis, snx
+              </div>
+            </div>
           </div>
-        </div>
 
         {/* Manual */}
         <div>

@@ -8,7 +8,7 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-white selection:bg-green-500 selection:text-slate-900 overflow-x-hidden">
       
       {/* --- Navigation --- */}
-      {/* UPDATE: Changed to 'fixed top-0' for sticky glass effect */}
+      {/* Sticky glass effect */}
       <nav className="fixed top-0 z-50 w-full border-b border-slate-800 bg-slate-950/60 backdrop-blur-md">
         <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
@@ -37,7 +37,7 @@ export default function Home() {
       </nav>
 
       {/* --- Hero Section --- */}
-      {/* UPDATE: Changed pt-20 to pt-32 to prevent content hiding behind fixed nav */}
+      {/* Padding adjusted for fixed nav */}
       <section className="relative flex flex-col items-center justify-center text-center px-6 pt-32 pb-32 max-w-5xl mx-auto">
         
         {/* Badge */}
@@ -82,8 +82,9 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center">Application Suite</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Product 1: CLI-Studio (Cyan Theme) */}
+            {/* Product 1: CLI-Studio (Green Theme) - Linked to Placeholder */}
             <ProductCard 
+              href="/docs/cli-studio"
               icon={
                 <Image 
                   src="/logo1.png" 
@@ -95,11 +96,12 @@ export default function Home() {
               }
               title="CLI▶Studio"
               description="Image, video and audio manipulation."
-              color="cyan"
+              color="green" 
             />
 
-            {/* Product 2: Synapxis (Amber Theme) */}
+            {/* Product 2: Synapxis (Amber Theme) - Linked to Docs */}
             <ProductCard 
+              href="/docs/synapxis"
               icon={
                 <Image 
                   src="/logo2.png" 
@@ -114,8 +116,9 @@ export default function Home() {
               color="amber"
             />
 
-            {/* Product 3: LXM (Blue Theme) */}
+            {/* Product 3: LXM (Blue Theme) - Linked to Placeholder */}
             <ProductCard 
+              href="/docs/lxm"
               icon={
                 <Image 
                   src="/logo3.png" 
@@ -141,12 +144,15 @@ export default function Home() {
   );
 }
 
-// ProductCard with Colored Card Shadow Logic
-function ProductCard({ icon, title, description, color }: any) {
+// Updated ProductCard with Links and Green Logic
+function ProductCard({ icon, title, description, color, href }: any) {
   
   // Define styles for each color theme
-  // UPDATE: Removed colored borders to match the Get Started page style
   const theme = {
+    green: {
+      // Green glow on hover
+      styles: "hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.3)]"
+    },
     cyan: {
       styles: "hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)]"
     },
@@ -156,22 +162,24 @@ function ProductCard({ icon, title, description, color }: any) {
     blue: {
       styles: "hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]"
     },
-  }[color as "cyan" | "amber" | "blue"] || { 
+  }[color as "green" | "cyan" | "amber" | "blue"] || { 
     styles: "hover:shadow-xl" 
   };
 
   return (
-    <div className={`group p-8 rounded-2xl bg-slate-950 border border-slate-800 ${theme.styles} transition-all duration-300 hover:-translate-y-1`}>
-      <div className="mb-4 p-3 bg-slate-900/50 rounded-lg inline-block">
-        {icon}
+    <Link href={href} className="block h-full">
+      <div className={`group h-full p-8 rounded-2xl bg-slate-950 border border-slate-800 ${theme.styles} transition-all duration-300 hover:-translate-y-1`}>
+        <div className="mb-4 p-3 bg-slate-900/50 rounded-lg inline-block">
+          {icon}
+        </div>
+        <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+          {title}
+          <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+        </h3>
+        <p className="text-slate-400 leading-relaxed">
+          {description}
+        </p>
       </div>
-      <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-        {title}
-        <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-      </h3>
-      <p className="text-slate-400 leading-relaxed">
-        {description}
-      </p>
-    </div>
+    </Link>
   );
 }

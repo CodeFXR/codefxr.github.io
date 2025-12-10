@@ -86,7 +86,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         </aside>
 
         {/* --- 4. MAIN CONTENT AREA --- */}
-        <main className="flex-1 px-8 py-8 min-h-screen">
+        <main className="flex-1 px-8 py-8 min-h-screen min-w-0">
           {children}
         </main>
 

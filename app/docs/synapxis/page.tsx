@@ -124,7 +124,8 @@ export default function SynapxisDocs() {
         <div className="space-y-6">
           <div>
             <p className="mb-3">Run the following to check if you have the necessary tools:</p>
-            <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800">
+            {/* Added max-w constraints for mobile safety */}
+            <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 max-w-[85vw] md:max-w-none">
               <code className="text-slate-300">
 {`# Check Python (Must be 3.8+)
 python3 --version
@@ -170,7 +171,8 @@ git --version`}
             Option A: Automatic <span className="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20">Recommended</span>
           </h3>
           <p className="mb-4 text-slate-400">Creates a sandboxed environment (.venv), compiles the Rust engine, and sets up aliases.</p>
-          <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 shadow-lg shadow-green-900/10">
+          {/* Added max-w constraints for mobile safety */}
+          <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 shadow-lg shadow-green-900/10 max-w-[85vw] md:max-w-none">
             <code className="text-green-300">
               /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/CodeFXR/Synapxis/refs/heads/Synapxis/install.sh)"
             </code>
@@ -185,7 +187,8 @@ git --version`}
         {/* Manual */}
         <div>
           <h3 className="text-xl font-semibold text-white mb-4">Option B: Manual</h3>
-          <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 leading-relaxed">
+          {/* Added max-w constraints for mobile safety */}
+          <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 leading-relaxed max-w-[85vw] md:max-w-none">
             <code className="text-slate-300">
 {`git clone https://github.com/CodeFXR/Synapxis.git
 cd Synapxis
@@ -222,7 +225,8 @@ python synapxis.py`}
                 <div className="ml-8 text-sm text-slate-400">
                     <p className="mb-2"><strong>Cause:</strong> The <code>synapxis_rs</code> binary was not compiled found.</p>
                     <p className="mb-2"><strong>Solution:</strong> Install Rust and re-run the installer.</p>
-                    <code className="block bg-black/30 p-2 rounded font-mono text-xs">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code>
+                    {/* Added break-all to ensure URL wraps if needed */}
+                    <code className="block bg-black/30 p-2 rounded font-mono text-xs break-all">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code>
                 </div>
             </div>
 

@@ -174,7 +174,7 @@ git --version`}
             
             <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 shadow-lg shadow-green-900/10 max-w-[85vw] md:max-w-none">
               <code className="text-green-300">
-                /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/CodeFXR/Synapxis/refs/heads/Synapxis/install.sh)"
+                curl -fsSL https://snx.codefxr.com/install | bash
               </code>
             </pre>
 

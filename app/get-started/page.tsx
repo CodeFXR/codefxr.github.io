@@ -100,7 +100,7 @@ export default function GetStarted() {
               
               <div className="mb-2 text-sm text-slate-400">Run auto-installer:</div>
               <div className="bg-slate-950 rounded-lg p-4 border border-slate-800 font-mono text-xs text-white mb-8 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-slate-700">
-                /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/CodeFXR/Synapxis/refs/heads/Synapxis/install.sh)"
+                curl -fsSL https://snx.codefxr.com/install | bash
               </div>
 
               <div className="mt-auto">

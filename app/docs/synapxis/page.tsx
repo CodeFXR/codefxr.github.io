@@ -1,4 +1,4 @@
-import { Terminal, Cpu, Share2, AlertTriangle, CheckCircle } from "lucide-react";
+import { Terminal, Cpu, Share2, AlertTriangle, CheckCircle, FileText, Tag, Keyboard, Command } from "lucide-react";
 
 export default function SynapxisDocs() {
   return (
@@ -56,7 +56,7 @@ export default function SynapxisDocs() {
             </ul>
           </div>
 
-          {/* Interactive Tools */}
+          {/* Interactive Tools Grid */}
           <div className="grid md:grid-cols-2 gap-4">
              <div className="bg-slate-900/30 p-5 rounded-xl border border-slate-800">
                <h4 className="font-bold text-white mb-2">Spotlight Mode</h4>
@@ -76,15 +76,58 @@ export default function SynapxisDocs() {
              </div>
           </div>
 
-          {/* Wikilinks */}
-          <div className="bg-teal-500/5 p-6 rounded-xl border border-teal-500/20">
-            <h3 className="text-lg font-bold text-white mb-2">Wikilinks Support</h3>
-            <p className="mb-3">Notes are connected using standard Wikilink syntax.</p>
-            <div className="bg-slate-950 p-4 rounded-lg font-mono text-sm border border-slate-800">
-               Type <span className="text-teal-400">[[</span> while editing to open the autocomplete menu.
+          {/* New Features Row */}
+          <div className="grid md:grid-cols-2 gap-6">
+            
+            {/* Wikilinks */}
+            <div className="bg-teal-500/5 p-6 rounded-xl border border-teal-500/20">
+                <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <Command className="w-5 h-5 text-teal-400" />
+                    Wikilinks & Autocomplete
+                </h3>
+                <ul className="space-y-2 text-sm">
+                    <li><strong>Link:</strong> Type <span className="font-mono text-teal-400">[[</span> while editing to open the Autocomplete Menu.</li>
+                    <li><strong>Select:</strong> Use Up/Down arrows or Mouse to select a note.</li>
+                </ul>
+                <p className="mt-3 text-xs text-slate-400 border-t border-teal-500/10 pt-3">Creates a bidirectional connection visualized as a line in the Graph View.</p>
             </div>
-            <p className="mt-3 text-sm text-slate-400">Result: Creates a bidirectional connection visualized as a line in the Graph View.</p>
+
+            {/* Export Studio */}
+            <div className="bg-blue-500/5 p-6 rounded-xl border border-blue-500/20">
+                <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <FileText className="w-5 h-5 text-blue-400" />
+                    Export Studio
+                </h3>
+                <p className="text-sm mb-3">Share your thoughts outside the terminal.</p>
+                <div className="bg-slate-950 p-2 rounded border border-slate-800 font-mono text-xs mb-3 text-center">
+                    Press <span className="text-blue-400">Alt + E</span> inside a note
+                </div>
+                <div className="flex gap-2 text-xs font-mono text-slate-400">
+                    <span className="bg-slate-900 px-2 py-1 rounded">Markdown</span>
+                    <span className="bg-slate-900 px-2 py-1 rounded">HTML</span>
+                    <span className="bg-slate-900 px-2 py-1 rounded">PDF</span>
+                </div>
+            </div>
+
+            {/* Tagging */}
+            <div className="bg-orange-500/5 p-6 rounded-xl border border-orange-500/20 md:col-span-2">
+                <h3 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <Tag className="w-5 h-5 text-orange-400" />
+                    Tagging & Custom Colors
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <strong className="block text-white mb-1">Organize</strong>
+                        <p className="text-slate-400">Type tags like <span className="text-orange-400">#ideas</span> or <span className="text-orange-400">#project</span> directly in your text.</p>
+                    </div>
+                    <div>
+                        <strong className="block text-white mb-1">Customize</strong>
+                        <p className="text-slate-400">Press <kbd className="bg-slate-800 px-1.5 py-0.5 rounded text-white font-mono text-xs">S</kbd> on the main menu to open Settings and assign specific colors to tags.</p>
+                    </div>
+                </div>
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -124,7 +167,6 @@ export default function SynapxisDocs() {
         <div className="space-y-6">
           <div>
             <p className="mb-3">Run the following to check if you have the necessary tools:</p>
-            {/* Added max-w constraints for mobile safety */}
             <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 max-w-[85vw] md:max-w-none">
               <code className="text-slate-300">
 {`# Check Python (Must be 3.8+)
@@ -166,39 +208,26 @@ git --version`}
         <h2 className="text-2xl font-bold text-white mb-6 border-l-4 border-green-500 pl-4">Installation</h2>
         
         {/* Automatic */}
-          <div className="mb-10">
-            <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-              Option A: Automatic <span className="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20">Recommended</span>
-            </h3>
-            <p className="mb-4 text-slate-400">Creates a sandboxed environment (.venv), compiles the Rust engine, and sets up aliases.</p>
-            
-            <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 shadow-lg shadow-green-900/10 max-w-[85vw] md:max-w-none">
-              <code className="text-green-300">
-                curl -fsSL https://snx.codefxr.com/install | bash
-              </code>
-            </pre>
-
-            {/* FIXED GRID: 
-                1. Changed grid-cols-2 to grid-cols-1 md:grid-cols-2 (Stack on mobile)
-                2. Added 'break-all' to force the long path to wrap 
-            */}
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-500 font-mono">
-              <div className="bg-slate-900/50 p-2 rounded border border-slate-800 break-all">
-                Install Location: ~/.synapxis
-              </div>
-              <div className="bg-slate-900/50 p-2 rounded border border-slate-800 break-all">
-                Data Location: ~/.synapxis_cli/notes.json
-              </div>
-              <div className="bg-slate-900/50 p-2 rounded border border-slate-800 md:col-span-2">
-                Aliases: synapxis, snx
-              </div>
-            </div>
+        <div className="mb-10">
+          <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+            Option A: Automatic <span className="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20">Recommended</span>
+          </h3>
+          <p className="mb-4 text-slate-400">Creates a sandboxed environment (.venv), compiles the Rust engine, and sets up aliases.</p>
+          <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 shadow-lg shadow-green-900/10 max-w-[85vw] md:max-w-none">
+            <code className="text-green-300">
+              curl -fsSL https://snx.codefxr.com/install | bash
+            </code>
+          </pre>
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-500 font-mono">
+            <div className="bg-slate-900/50 p-2 rounded border border-slate-800 break-all">Install Location: ~/.synapxis</div>
+            <div className="bg-slate-900/50 p-2 rounded border border-slate-800 break-all">Data Location: ~/.synapxis_v2/notes.db</div>
+            <div className="bg-slate-900/50 p-2 rounded border border-slate-800 md:col-span-2">Aliases: synapxis, snx</div>
           </div>
+        </div>
 
         {/* Manual */}
         <div>
           <h3 className="text-xl font-semibold text-white mb-4">Option B: Manual</h3>
-          {/* Added max-w constraints for mobile safety */}
           <pre className="bg-slate-950 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 leading-relaxed max-w-[85vw] md:max-w-none">
             <code className="text-slate-300">
 {`git clone https://github.com/CodeFXR/Synapxis.git
@@ -209,17 +238,85 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # 2. Install Dependencies
-pip install textual networkx scipy numpy textual-image maturin
+pip install textual networkx scipy numpy textual-image maturin aiosqlite
 
 # 3. Compile Rust Backend (Requires cargo)
-cd synapxis_rs
+# If skipped, the app will run in standard definition mode.
+cd rust_core
 maturin develop --release
 cd ..
 
 # 4. Run
-python synapxis.py`}
+python main.py`}
             </code>
           </pre>
+        </div>
+      </section>
+
+      {/* --- SHORTCUTS (NEW) --- */}
+      <section className="mb-16 scroll-mt-24">
+        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2 border-l-4 border-purple-500 pl-4">
+          <Keyboard className="w-6 h-6 text-purple-400" />
+          Keyboard Shortcuts
+        </h2>
+        
+        <div className="border border-slate-800 rounded-xl overflow-hidden">
+            <table className="w-full text-left text-sm">
+                <thead className="bg-slate-900 text-slate-400 font-medium">
+                    <tr>
+                        <th className="px-6 py-4">Context</th>
+                        <th className="px-6 py-4">Shortcut</th>
+                        <th className="px-6 py-4">Action</th>
+                    </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800">
+                    <tr className="bg-slate-950/50">
+                        <td className="px-6 py-3 font-bold text-blue-400">Note View</td>
+                        <td className="px-6 py-3 font-mono text-slate-300">Alt + N</td>
+                        <td className="px-6 py-3 text-slate-400">New Page</td>
+                    </tr>
+                    <tr className="bg-slate-950/50">
+                        <td className="px-6 py-3"></td>
+                        <td className="px-6 py-3 font-mono text-slate-300">Alt + F</td>
+                        <td className="px-6 py-3 text-slate-400">Search Notes</td>
+                    </tr>
+                    <tr className="bg-slate-950/50">
+                        <td className="px-6 py-3"></td>
+                        <td className="px-6 py-3 font-mono text-slate-300">Alt + E</td>
+                        <td className="px-6 py-3 text-slate-400">Export Note</td>
+                    </tr>
+                    <tr className="bg-slate-950/50">
+                        <td className="px-6 py-3"></td>
+                        <td className="px-6 py-3 font-mono text-slate-300">Alt + B</td>
+                        <td className="px-6 py-3 text-slate-400">Show Backlinks</td>
+                    </tr>
+                    <tr className="bg-slate-950/50">
+                        <td className="px-6 py-3"></td>
+                        <td className="px-6 py-3 font-mono text-slate-300">Alt + G</td>
+                        <td className="px-6 py-3 text-slate-400">Switch to Graph</td>
+                    </tr>
+                     <tr className="bg-slate-950/50">
+                        <td className="px-6 py-3"></td>
+                        <td className="px-6 py-3 font-mono text-teal-400">[[</td>
+                        <td className="px-6 py-3 text-slate-400">Link Autocomplete</td>
+                    </tr>
+                    <tr className="bg-slate-900/30 border-t border-slate-800">
+                        <td className="px-6 py-3 font-bold text-orange-400">Graph View</td>
+                        <td className="px-6 py-3 font-mono text-slate-300">F</td>
+                        <td className="px-6 py-3 text-slate-400">Find Node</td>
+                    </tr>
+                     <tr className="bg-slate-900/30">
+                        <td className="px-6 py-3"></td>
+                        <td className="px-6 py-3 font-mono text-slate-300">Mouse Drag</td>
+                        <td className="px-6 py-3 text-slate-400">Pan / Move Node</td>
+                    </tr>
+                     <tr className="bg-slate-900/30">
+                        <td className="px-6 py-3"></td>
+                        <td className="px-6 py-3 font-mono text-slate-300">Scroll</td>
+                        <td className="px-6 py-3 text-slate-400">Zoom In/Out</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
       </section>
 
@@ -236,7 +333,6 @@ python synapxis.py`}
                 <div className="ml-8 text-sm text-slate-400">
                     <p className="mb-2"><strong>Cause:</strong> The <code>synapxis_rs</code> binary was not compiled found.</p>
                     <p className="mb-2"><strong>Solution:</strong> Install Rust and re-run the installer.</p>
-                    {/* Added break-all to ensure URL wraps if needed */}
                     <code className="block bg-black/30 p-2 rounded font-mono text-xs break-all">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code>
                 </div>
             </div>
@@ -269,7 +365,7 @@ python synapxis.py`}
                 <div className="grid md:grid-cols-2 gap-4 font-mono text-xs">
                     <div>
                         <p className="text-slate-500 mb-1"># Reset Data (Deletes Notes)</p>
-                        <code className="bg-slate-950 p-2 rounded block">rm -rf ~/.synapxis_cli</code>
+                        <code className="bg-slate-950 p-2 rounded block">rm -rf ~/.synapxis_v2</code>
                     </div>
                     <div>
                         <p className="text-slate-500 mb-1"># Uninstall App</p>

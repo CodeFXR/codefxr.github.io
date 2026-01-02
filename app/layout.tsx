@@ -14,7 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "CodeFXR",
-  description: "Unleash your terminal!",
+  description: "A suite of high-performance terminal user interfaces (TUI) designed to modernize and simplify native command-line workflows.",
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({

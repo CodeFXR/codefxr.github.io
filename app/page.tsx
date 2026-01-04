@@ -112,7 +112,7 @@ export default function Home() {
                 />
               }
               title="Synapxis"
-              description="Graph view interface with jrnl integration."
+              description="A Terminal-based Knowledge Graph with Rust-powered visualization."
               color="amber"
             />
 

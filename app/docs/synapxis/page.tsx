@@ -260,60 +260,61 @@ python main.py`}
           Keyboard Shortcuts
         </h2>
         
-        <div className="border border-slate-800 rounded-xl overflow-hidden">
-            <table className="w-full text-left text-sm">
+        {/* Table Wrapper with mobile scrolling fix */}
+        <div className="border border-slate-800 rounded-xl overflow-x-auto">
+            <table className="w-full text-left text-sm min-w-[500px]">
                 <thead className="bg-slate-900 text-slate-400 font-medium">
                     <tr>
-                        <th className="px-6 py-4">Context</th>
-                        <th className="px-6 py-4">Shortcut</th>
-                        <th className="px-6 py-4">Action</th>
+                        <th className="px-4 md:px-6 py-4">Context</th>
+                        <th className="px-4 md:px-6 py-4">Shortcut</th>
+                        <th className="px-4 md:px-6 py-4">Action</th>
                     </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-800">
                     <tr className="bg-slate-950/50">
-                        <td className="px-6 py-3 font-bold text-blue-400">Note View</td>
-                        <td className="px-6 py-3 font-mono text-slate-300">Alt + N</td>
-                        <td className="px-6 py-3 text-slate-400">New Page</td>
+                        <td className="px-4 md:px-6 py-3 font-bold text-blue-400">Note View</td>
+                        <td className="px-4 md:px-6 py-3 font-mono text-slate-300 whitespace-nowrap">Alt + N</td>
+                        <td className="px-4 md:px-6 py-3 text-slate-400">New Page</td>
                     </tr>
                     <tr className="bg-slate-950/50">
-                        <td className="px-6 py-3"></td>
-                        <td className="px-6 py-3 font-mono text-slate-300">Alt + F</td>
-                        <td className="px-6 py-3 text-slate-400">Search Notes</td>
+                        <td className="px-4 md:px-6 py-3"></td>
+                        <td className="px-4 md:px-6 py-3 font-mono text-slate-300 whitespace-nowrap">Alt + F</td>
+                        <td className="px-4 md:px-6 py-3 text-slate-400">Search Notes</td>
                     </tr>
                     <tr className="bg-slate-950/50">
-                        <td className="px-6 py-3"></td>
-                        <td className="px-6 py-3 font-mono text-slate-300">Alt + E</td>
-                        <td className="px-6 py-3 text-slate-400">Export Note</td>
+                        <td className="px-4 md:px-6 py-3"></td>
+                        <td className="px-4 md:px-6 py-3 font-mono text-slate-300 whitespace-nowrap">Alt + E</td>
+                        <td className="px-4 md:px-6 py-3 text-slate-400">Export Note</td>
                     </tr>
                     <tr className="bg-slate-950/50">
-                        <td className="px-6 py-3"></td>
-                        <td className="px-6 py-3 font-mono text-slate-300">Alt + B</td>
-                        <td className="px-6 py-3 text-slate-400">Show Backlinks</td>
+                        <td className="px-4 md:px-6 py-3"></td>
+                        <td className="px-4 md:px-6 py-3 font-mono text-slate-300 whitespace-nowrap">Alt + B</td>
+                        <td className="px-4 md:px-6 py-3 text-slate-400">Show Backlinks</td>
                     </tr>
                     <tr className="bg-slate-950/50">
-                        <td className="px-6 py-3"></td>
-                        <td className="px-6 py-3 font-mono text-slate-300">Alt + G</td>
-                        <td className="px-6 py-3 text-slate-400">Switch to Graph</td>
+                        <td className="px-4 md:px-6 py-3"></td>
+                        <td className="px-4 md:px-6 py-3 font-mono text-slate-300 whitespace-nowrap">Alt + G</td>
+                        <td className="px-4 md:px-6 py-3 text-slate-400">Switch to Graph</td>
                     </tr>
                      <tr className="bg-slate-950/50">
-                        <td className="px-6 py-3"></td>
-                        <td className="px-6 py-3 font-mono text-teal-400">[[</td>
-                        <td className="px-6 py-3 text-slate-400">Link Autocomplete</td>
+                        <td className="px-4 md:px-6 py-3"></td>
+                        <td className="px-4 md:px-6 py-3 font-mono text-teal-400 whitespace-nowrap">[[</td>
+                        <td className="px-4 md:px-6 py-3 text-slate-400">Link Autocomplete</td>
                     </tr>
                     <tr className="bg-slate-900/30 border-t border-slate-800">
-                        <td className="px-6 py-3 font-bold text-orange-400">Graph View</td>
-                        <td className="px-6 py-3 font-mono text-slate-300">F</td>
-                        <td className="px-6 py-3 text-slate-400">Find Node</td>
+                        <td className="px-4 md:px-6 py-3 font-bold text-orange-400">Graph View</td>
+                        <td className="px-4 md:px-6 py-3 font-mono text-slate-300 whitespace-nowrap">F</td>
+                        <td className="px-4 md:px-6 py-3 text-slate-400">Find Node</td>
                     </tr>
                      <tr className="bg-slate-900/30">
-                        <td className="px-6 py-3"></td>
-                        <td className="px-6 py-3 font-mono text-slate-300">Mouse Drag</td>
-                        <td className="px-6 py-3 text-slate-400">Pan / Move Node</td>
+                        <td className="px-4 md:px-6 py-3"></td>
+                        <td className="px-4 md:px-6 py-3 font-mono text-slate-300 whitespace-nowrap">Mouse Drag</td>
+                        <td className="px-4 md:px-6 py-3 text-slate-400">Pan / Move Node</td>
                     </tr>
                      <tr className="bg-slate-900/30">
-                        <td className="px-6 py-3"></td>
-                        <td className="px-6 py-3 font-mono text-slate-300">Scroll</td>
-                        <td className="px-6 py-3 text-slate-400">Zoom In/Out</td>
+                        <td className="px-4 md:px-6 py-3"></td>
+                        <td className="px-4 md:px-6 py-3 font-mono text-slate-300 whitespace-nowrap">Scroll</td>
+                        <td className="px-4 md:px-6 py-3 text-slate-400">Zoom In/Out</td>
                     </tr>
                 </tbody>
             </table>

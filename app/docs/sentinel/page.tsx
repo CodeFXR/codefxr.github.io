@@ -1,4 +1,4 @@
-import { ShieldCheck, Activity, UserCheck, Lock, PenTool, Terminal, AlertTriangle, Keyboard } from "lucide-react";
+import { ShieldCheck, Activity, UserCheck, Lock, PenTool, AlertTriangle, Keyboard } from "lucide-react";
 
 export default function SentinelDocs() {
   return (
@@ -18,7 +18,7 @@ export default function SentinelDocs() {
       </div>
 
       {/* --- 1. FEATURES --- */}
-      <section className="mb-16 scroll-mt-24">
+      <section id="features" className="mb-16 scroll-mt-24">
         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2 border-l-4 border-slate-400 pl-4">
           Features
         </h2>
@@ -75,7 +75,7 @@ export default function SentinelDocs() {
       </section>
 
       {/* --- 2. PREREQUISITES --- */}
-      <section className="mb-16 scroll-mt-24">
+      <section id="prerequisites" className="mb-16 scroll-mt-24">
         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2 border-l-4 border-blue-500 pl-4">
           Prerequisites
         </h2>
@@ -94,12 +94,13 @@ export default function SentinelDocs() {
       </section>
 
       {/* --- 3. INSTALLATION --- */}
-      <section className="mb-16 scroll-mt-24">
+      <section id="installation" className="mb-16 scroll-mt-24">
         <h2 className="text-2xl font-bold text-white mb-6 border-l-4 border-green-500 pl-4">Installation</h2>
         
+        {/* Automatic */}
         <div className="mb-10">
           <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-            The One-Liner <span className="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20">Recommended</span>
+            Option A: Automatic <span className="text-xs bg-green-500/10 text-green-400 px-2 py-0.5 rounded border border-green-500/20">Recommended</span>
           </h3>
           <p className="mb-4 text-slate-400">Clones the repo, creates a virtual environment, installs dependencies, and sets up the alias.</p>
           <pre className="bg-slate-900 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 shadow-lg shadow-green-900/10 max-w-[85vw] md:max-w-none">
@@ -108,10 +109,31 @@ export default function SentinelDocs() {
             </code>
           </pre>
         </div>
+
+        {/* Manual */}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-4">Option B: Manual</h3>
+          <pre className="bg-slate-900 p-4 rounded-lg font-mono text-sm overflow-x-auto border border-slate-800 leading-relaxed max-w-[85vw] md:max-w-none">
+            <code className="text-slate-300">
+{`git clone https://github.com/CodeFXR/Sentinel.git
+cd Sentinel
+
+# 1. Create Environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 2. Install Dependencies
+pip install textual pyhanko cryptography
+
+# 3. Run
+python main.py`}
+            </code>
+          </pre>
+        </div>
       </section>
 
       {/* --- 4. USAGE --- */}
-      <section className="mb-16 scroll-mt-24">
+      <section id="usage" className="mb-16 scroll-mt-24">
         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2 border-l-4 border-purple-500 pl-4">
           Usage
         </h2>
@@ -151,7 +173,7 @@ export default function SentinelDocs() {
       </section>
 
       {/* --- 5. TROUBLESHOOTING --- */}
-      <section className="mb-20 scroll-mt-24">
+      <section id="troubleshooting" className="mb-20 scroll-mt-24">
         <h2 className="text-2xl font-bold text-white mb-6 border-l-4 border-red-500 pl-4">Troubleshooting</h2>
         <div className="space-y-4">
             

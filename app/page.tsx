@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-// Keeping imports just in case
-import { ArrowRight, Terminal, Share2, Layers } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white selection:bg-green-500 selection:text-slate-900 overflow-x-hidden">
       
       {/* --- Navigation --- */}
-      {/* Sticky glass effect */}
       <nav className="fixed top-0 z-50 w-full border-b border-slate-800 bg-slate-950/60 backdrop-blur-md">
         <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
@@ -37,7 +35,6 @@ export default function Home() {
       </nav>
 
       {/* --- Hero Section --- */}
-      {/* Padding adjusted for fixed nav */}
       <section className="relative flex flex-col items-center justify-center text-center px-6 pt-32 pb-32 max-w-5xl mx-auto">
         
         {/* Badge */}
@@ -60,14 +57,12 @@ export default function Home() {
         </p>
 
         <div className="flex gap-4">
-          {/* Get Started Button */}
           <Link href="/get-started">
             <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_-5px_rgba(255,255,255,0.5)]">
               Get Started
             </button>
           </Link>
           
-          {/* Documentation Button */}
           <Link href="/docs/synapxis">
             <button className="px-8 py-3 rounded-lg font-bold border border-slate-700 hover:border-blue-500 text-white hover:bg-slate-900 transition-all duration-300">
               View Documentation
@@ -81,8 +76,44 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Application Suite</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Product 1: CLI-Studio (Green Theme) - Linked to Placeholder */}
+          {/* Grid Layout: 2 cols on medium, 4 cols on large */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            {/* 1. Synapxis (Amber) */}
+            <ProductCard 
+              href="/docs/synapxis"
+              icon={
+                <Image 
+                  src="/logo2.png" 
+                  alt="Synapxis Icon" 
+                  width={40} 
+                  height={40} 
+                  className="object-contain"
+                />
+              }
+              title="Synapxis"
+              description="Graph view interface with jrnl integration."
+              color="amber"
+            />
+
+            {/* 2. Sentinel (Silver) */}
+            <ProductCard 
+              href="/docs/sentinel"
+              icon={
+                <Image 
+                  src="/logo4.png" 
+                  alt="Sentinel Icon" 
+                  width={40} 
+                  height={40} 
+                  className="object-contain"
+                />
+              }
+              title="Sentinel"
+              description="Identity management and security auditing."
+              color="silver"
+            />
+
+            {/* 3. CLI-Studio (Green) */}
             <ProductCard 
               href="/docs/cli-studio"
               icon={
@@ -99,24 +130,7 @@ export default function Home() {
               color="green" 
             />
 
-            {/* Product 2: Synapxis (Amber Theme) - Linked to Docs */}
-            <ProductCard 
-              href="/docs/synapxis"
-              icon={
-                <Image 
-                  src="/logo2.png" 
-                  alt="Synapxis Icon" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              }
-              title="Synapxis"
-              description="A Terminal-based Knowledge Graph with Rust-powered visualization."
-              color="amber"
-            />
-
-            {/* Product 3: LXM (Blue Theme) - Linked to Placeholder */}
+            {/* 4. LXM (Blue) */}
             <ProductCard 
               href="/docs/lxm"
               icon={
@@ -144,25 +158,16 @@ export default function Home() {
   );
 }
 
-// Updated ProductCard with Links and Green Logic
+// ProductCard with Silver Logic
 function ProductCard({ icon, title, description, color, href }: any) {
   
-  // Define styles for each color theme
   const theme = {
-    green: {
-      // Green glow on hover
-      styles: "hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.3)]"
-    },
-    cyan: {
-      styles: "hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)]"
-    },
-    amber: {
-      styles: "hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]"
-    },
-    blue: {
-      styles: "hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]"
-    },
-  }[color as "green" | "cyan" | "amber" | "blue"] || { 
+    green: { styles: "hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.3)]" },
+    cyan: { styles: "hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)]" },
+    amber: { styles: "hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]" },
+    blue: { styles: "hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]" },
+    silver: { styles: "hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)]" }, // Silver Theme
+  }[color as "green" | "cyan" | "amber" | "blue" | "silver"] || { 
     styles: "hover:shadow-xl" 
   };
 
@@ -176,7 +181,7 @@ function ProductCard({ icon, title, description, color, href }: any) {
           {title}
           <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
         </h3>
-        <p className="text-slate-400 leading-relaxed">
+        <p className="text-slate-400 leading-relaxed text-sm">
           {description}
         </p>
       </div>

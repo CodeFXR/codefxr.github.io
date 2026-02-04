@@ -5,7 +5,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="min-h-screen bg-slate-950 text-white selection:bg-green-500 selection:text-slate-900">
       
-      {/* --- 1. TOP NAVIGATION (Same as Get Started) --- */}
+      {/* --- 1. TOP NAVIGATION --- */}
       <nav className="fixed top-0 z-50 w-full border-b border-slate-800 bg-slate-950/60 backdrop-blur-md">
         <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
           
@@ -37,11 +37,9 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
       </nav>
 
       {/* --- 2. MAIN LAYOUT CONTAINER --- */}
-      {/* pt-24 pushes content down so it's not hidden behind the fixed header */}
       <div className="flex flex-col md:flex-row max-w-7xl mx-auto pt-24">
         
         {/* --- 3. SIDEBAR --- */}
-        {/* sticky top-24 makes it stay on screen while you scroll the content */}
         <aside className="w-full md:w-64 shrink-0 md:border-r border-slate-800 md:min-h-[calc(100vh-6rem)] px-6 py-8 bg-slate-950 md:sticky md:top-24 self-start">
           
           {/* Synapxis Menu */}
@@ -69,9 +67,14 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             </li>
           </ul>
 
-          {/* Other Apps (Now Clickable) */}
+          {/* Other Apps */}
           <h3 className="font-bold text-slate-500 mb-4 px-2 uppercase text-xs tracking-wider">In Development</h3>
           <ul className="space-y-1 ml-2">
+            <li>
+                <Link href="/docs/sentinel" className="block px-4 py-1.5 text-sm text-slate-400 hover:text-white transition-colors">
+                    Sentinel
+                </Link>
+            </li>
             <li>
                 <Link href="/docs/cli-studio" className="block px-4 py-1.5 text-sm text-slate-400 hover:text-white transition-colors">
                     CLI-Studio

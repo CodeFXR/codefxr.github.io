@@ -11,62 +11,33 @@ export default function Home() {
         <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
             <div className="relative w-8 h-8">
-             <Image 
-               src="/logo.png" 
-               alt="CodeFXR Logo" 
-               fill 
-               className="object-contain"
-             />
+             <Image src="/logo.png" alt="CodeFXR Logo" fill className="object-contain" />
             </div>
             <span className="text-xl font-bold tracking-tight">CodeFXR</span>
           </div>
           <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
             <Link href="#products" className="hover:text-green-400 transition-colors">Applications</Link>
-            <Link 
-              href="https://github.com/CodeFXR/codefxr.github.io" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors"
-            >
-              GitHub
-            </Link>
+            <Link href="https://github.com/CodeFXR/codefxr.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">GitHub</Link>
           </div>
         </div>
       </nav>
 
       {/* --- Hero Section --- */}
       <section className="relative flex flex-col items-center justify-center text-center px-6 pt-32 pb-32 max-w-5xl mx-auto">
-        
-        {/* Badge */}
         <div className="mb-8 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-md shadow-sm transition-all duration-300 hover:bg-slate-900 hover:border-blue-500/50 hover:shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] cursor-default">
-          <span className="text-xs font-semibold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
-            Unleash your terminal!
-          </span>
+          <span className="text-xs font-semibold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">Unleash your terminal!</span>
         </div>
-
-        {/* Main Title */}
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
           The Foundation for <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-teal-400 to-green-400">
-            Terminal User Interfaces
-          </span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-teal-400 to-green-400">Terminal User Interfaces</span>
         </h1>
-
-        <p className="text-lg text-slate-400 max-w-2xl mb-10 leading-relaxed">
-          CodeFXR provides the essential suite of applications for ease of use of native tools.
-        </p>
-
+        <p className="text-lg text-slate-400 max-w-2xl mb-10 leading-relaxed">CodeFXR provides the essential suite of applications for ease of use of native tools.</p>
         <div className="flex gap-4">
           <Link href="/get-started">
-            <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_-5px_rgba(255,255,255,0.5)]">
-              Get Started
-            </button>
+            <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_-5px_rgba(255,255,255,0.5)]">Get Started</button>
           </Link>
-          
           <Link href="/docs/synapxis">
-            <button className="px-8 py-3 rounded-lg font-bold border border-slate-700 hover:border-blue-500 text-white hover:bg-slate-900 transition-all duration-300">
-              View Documentation
-            </button>
+            <button className="px-8 py-3 rounded-lg font-bold border border-slate-700 hover:border-blue-500 text-white hover:bg-slate-900 transition-all duration-300">View Documentation</button>
           </Link>
         </div>
       </section>
@@ -76,21 +47,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Application Suite</h2>
           
-          {/* Grid Layout: 2 cols on medium, 4 cols on large */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* 1. Synapxis (Amber) */}
             <ProductCard 
               href="/docs/synapxis"
-              icon={
-                <Image 
-                  src="/logo2.png" 
-                  alt="Synapxis Icon" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              }
+              icon={<Image src="/logo2.png" alt="Synapxis" width={40} height={40} className="object-contain" />}
               title="Synapxis"
               description="Graph view interface with jrnl integration."
               color="amber"
@@ -99,33 +61,17 @@ export default function Home() {
             {/* 2. Sentinel (Silver) */}
             <ProductCard 
               href="/docs/sentinel"
-              icon={
-                <Image 
-                  src="/logo4.png" 
-                  alt="Sentinel Icon" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              }
+              icon={<Image src="/logo4.png" alt="Sentinel" width={40} height={40} className="object-contain" />}
               title="Sentinel"
               description="Identity management and security auditing."
               color="silver"
             />
 
-            {/* 3. CLI-Studio (Green) */}
+            {/* 3. CLI-Studio (Green) - FIXED NAME */}
             <ProductCard 
               href="/docs/cli-studio"
-              icon={
-                <Image 
-                  src="/logo1.png" 
-                  alt="CLI-Studio Icon" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              }
-              title="CLI▶Studio"
+              icon={<Image src="/logo1.png" alt="CLI-Studio" width={40} height={40} className="object-contain" />}
+              title="CLI-Studio"
               description="Image, video and audio manipulation."
               color="green" 
             />
@@ -133,15 +79,7 @@ export default function Home() {
             {/* 4. LXM (Blue) */}
             <ProductCard 
               href="/docs/lxm"
-              icon={
-                <Image 
-                  src="/logo3.png" 
-                  alt="LXM Icon" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              }
+              icon={<Image src="/logo3.png" alt="LXM" width={40} height={40} className="object-contain" />}
               title="LXM"
               description="Linux manual pages search and command builder."
               color="blue"
@@ -150,7 +88,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- Footer --- */}
       <footer className="py-8 text-center text-slate-600 text-sm border-t border-slate-900">
         <p>&copy; {new Date().getFullYear()} CodeFXR. All rights reserved.</p>
       </footer>
@@ -158,15 +95,13 @@ export default function Home() {
   );
 }
 
-// ProductCard with Silver Logic
 function ProductCard({ icon, title, description, color, href }: any) {
-  
   const theme = {
     green: { styles: "hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.3)]" },
     cyan: { styles: "hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)]" },
     amber: { styles: "hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]" },
     blue: { styles: "hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]" },
-    silver: { styles: "hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)]" }, // Silver Theme
+    silver: { styles: "hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)]" },
   }[color as "green" | "cyan" | "amber" | "blue" | "silver"] || { 
     styles: "hover:shadow-xl" 
   };

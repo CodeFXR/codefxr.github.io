@@ -37,7 +37,7 @@ export default function GetStarted() {
           </p>
         </div>
 
-        {/* The Grid: 2 cols medium, 4 cols xl */}
+        {/* The Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
           
           {/* 1. Synapxis (Amber - Active) */}
@@ -49,7 +49,8 @@ export default function GetStarted() {
               <h2 className="text-2xl font-bold text-white mb-2">Synapxis</h2>
               <span className="inline-block px-2 py-1 rounded bg-teal-500/10 text-teal-400 text-xs border border-teal-500/20 mb-6">v1.0 Stable</span>
               <div className="bg-slate-950 rounded-lg p-4 border border-slate-800 font-mono text-xs text-white mb-8 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-slate-700">
-                /bin/bash -c "$(curl -fsSL https://snx.codefxr.com/install | bash)"
+                {/* CORRECTED URL */}
+                curl -fsSL https://snx.codefxr.com/install | bash
               </div>
               <div className="mt-auto">
                 <Link href="/docs/synapxis">
@@ -61,21 +62,24 @@ export default function GetStarted() {
             </div>
           </div>
 
-          {/* 2. Sentinel (Silver - NEW) */}
+          {/* 2. Sentinel (Silver - Active) */}
           <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 flex flex-col relative overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)]">
             <div className="absolute -top-6 -right-6 opacity-10 group-hover:opacity-30 transition-all duration-500 rotate-12 group-hover:rotate-0">
                <Image src="/logo4.png" alt="Sentinel Logo" width={140} height={140} className="object-contain" />
             </div>
             <div className="relative z-10">
               <h2 className="text-2xl font-bold text-white mb-2">Sentinel</h2>
-              <span className="inline-block px-2 py-1 rounded bg-yellow-500/10 text-yellow-500 text-xs border border-yellow-500/20 mb-6">In Development</span>
-              <div className="bg-slate-950 rounded-lg p-4 border border-slate-800 font-mono text-sm mb-6 text-slate-500 select-none">
-                $ pip install sentinel-id
+              <span className="inline-block px-2 py-1 rounded bg-blue-500/10 text-blue-300 text-xs border border-blue-500/20 mb-6">v1.0 Stable</span>
+              <div className="bg-slate-950 rounded-lg p-4 border border-slate-800 font-mono text-xs text-white mb-8 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-slate-700">
+                {/* NEW URL */}
+                curl -fsSL https://snl.codefxr.com/install | bash
               </div>
               <div className="mt-auto">
-                <button disabled className="w-full py-2.5 rounded-lg border border-slate-800 text-slate-500 cursor-not-allowed text-sm font-medium">
-                  Docs Coming Soon
-                </button>
+                <Link href="/docs/sentinel">
+                  <button className="w-full py-2.5 rounded-lg bg-white text-slate-950 font-bold transition-all duration-300 flex items-center justify-center gap-2 hover:bg-slate-300 hover:text-slate-950 hover:shadow-lg">
+                    <BookOpen className="w-4 h-4" /> Read Full Docs
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -86,7 +90,8 @@ export default function GetStarted() {
                <Image src="/logo1.png" alt="CLI-Studio Logo" width={140} height={140} className="object-contain" />
             </div>
             <div className="relative z-10">
-              <h2 className="text-2xl font-bold text-white mb-2">CLI▶Studio</h2>
+              {/* FIXED NAME */}
+              <h2 className="text-2xl font-bold text-white mb-2">CLI-Studio</h2>
               <span className="inline-block px-2 py-1 rounded bg-yellow-500/10 text-yellow-500 text-xs border border-yellow-500/20 mb-6">In Development</span>
               <div className="bg-slate-950 rounded-lg p-4 border border-slate-800 font-mono text-sm mb-6 text-slate-500 select-none">
                 $ pip install cli-studio

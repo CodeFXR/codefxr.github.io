@@ -3,7 +3,7 @@
   <img src="public/logo.png" alt="CodeFXR Logo" width="150" />
 </p>
 <p align="center">
-  Central landing page for the CodeFXR application suite.<br> 
+  Central landing page for CodeFXR.<br> 
 </p>
 
 <p align="center">

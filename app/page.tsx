@@ -92,7 +92,7 @@ export default function Home() {
                 />
               }
               title="Synapxis"
-              description="Graph view interface with jrnl integration."
+              description="Knowledge Graph & Zettelkasten for the terminal."
               color="amber"
             />
 

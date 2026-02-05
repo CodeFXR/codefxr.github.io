@@ -2,9 +2,6 @@
 <p align="center">
   <img src="public/logo.png" alt="CodeFXR Logo" width="150" />
 </p>
-<p align="center">
-  Central landing page for CodeFXR.<br> 
-</p>
 
 <p align="center">
   <a href="https://github.com/CodeFXR/CLI-Studio">CLI-Studio</a> • 

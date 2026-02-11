@@ -11,59 +11,39 @@ export default function Home() {
         <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
             <div className="relative w-8 h-8">
-             <Image 
-               src="/logo.png" 
-               alt="CodeFXR Logo" 
-               fill 
-               className="object-contain"
-             />
+             <Image src="/logo.png" alt="CodeFXR Logo" fill className="object-contain" />
             </div>
             <span className="text-xl font-bold tracking-tight">CodeFXR</span>
           </div>
           <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
             <Link href="#products" className="hover:text-green-400 transition-colors">Applications</Link>
-            <Link 
-              href="https://github.com/CodeFXR/codefxr.github.io" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors"
-            >
-              GitHub
-            </Link>
+            <Link href="https://github.com/CodeFXR/codefxr.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">GitHub</Link>
           </div>
         </div>
       </nav>
 
       {/* --- Hero Section --- */}
       <section className="relative flex flex-col items-center justify-center text-center px-6 pt-32 pb-32 max-w-5xl mx-auto">
-        
-        {/* Badge */}
         <div className="mb-8 px-4 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 backdrop-blur-md shadow-sm transition-all duration-300 hover:bg-slate-900 hover:border-blue-500/50 hover:shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)] cursor-default">
           <span className="text-xs font-semibold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
             Unleash your terminal!
           </span>
         </div>
-
-        {/* Main Title */}
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
           The Foundation for <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-teal-400 to-green-400">
             Terminal User Interfaces
           </span>
         </h1>
-
         <p className="text-lg text-slate-400 max-w-2xl mb-10 leading-relaxed">
           CodeFXR provides the essential suite of applications for ease of use of native tools.
         </p>
-
         <div className="flex gap-4">
           <Link href="/get-started">
             <button className="px-8 py-3 rounded-lg font-bold bg-white text-slate-950 hover:bg-green-400 transition-all duration-300 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_-5px_rgba(255,255,255,0.5)]">
               Get Started
             </button>
           </Link>
-          
-          {/* Linked to the main Docs Hub */}
           <Link href="/docs">
             <button className="px-8 py-3 rounded-lg font-bold border border-slate-700 hover:border-blue-500 text-white hover:bg-slate-900 transition-all duration-300">
               View Documentation
@@ -77,80 +57,67 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Application Suite</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* 3 Column Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            {/* 1. Synapxis (Amber) */}
-            <ProductCard 
-              href="/docs/synapxis"
-              icon={
-                <Image 
-                  src="/logo2.png" 
-                  alt="Synapxis Icon" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              }
-              title="Synapxis"
-              description="Knowledge Graph & Zettelkasten for the terminal."
-              color="amber"
-            />
-
-            {/* 2. Sentinel (Silver) */}
-            <ProductCard 
-              href="/docs/sentinel"
-              icon={
-                <Image 
-                  src="/logo4.png" 
-                  alt="Sentinel Icon" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              }
-              title="Sentinel"
-              description="Identity management and security auditing."
-              color="silver"
-            />
-
-            {/* 3. CLI-Studio (Green) */}
+            {/* 1. CLI-Studio (Green) */}
             <ProductCard 
               href="/docs/cli-studio"
-              icon={
-                <Image 
-                  src="/logo1.png" 
-                  alt="CLI-Studio Icon" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              }
+              icon={<Image src="/logo1.png" alt="CLI-Studio" width={40} height={40} className="object-contain" />}
               title="CLI-Studio"
               description="Image, video and audio manipulation."
               color="green" 
             />
 
-            {/* 4. LXM (Blue) */}
+            {/* 2. Crolendar (Purple) */}
+            <ProductCard 
+              href="/docs/crolendar"
+              icon={<Image src="/logo5.png" alt="Crolendar" width={40} height={40} className="object-contain" />}
+              title="Crolendar"
+              description="Visual interface for cron job management."
+              color="purple"
+            />
+
+            {/* 3. LXM (Blue) */}
             <ProductCard 
               href="/docs/lxm"
-              icon={
-                <Image 
-                  src="/logo3.png" 
-                  alt="LXM Icon" 
-                  width={40} 
-                  height={40} 
-                  className="object-contain"
-                />
-              }
+              icon={<Image src="/logo3.png" alt="LXM" width={40} height={40} className="object-contain" />}
               title="LXM"
-              description="Linux manual pages search and command builder."
+              description="Lightweight asynchronous file manager."
               color="blue"
             />
+
+            {/* 4. Sentinel (Silver) */}
+            <ProductCard 
+              href="/docs/sentinel"
+              icon={<Image src="/logo4.png" alt="Sentinel" width={40} height={40} className="object-contain" />}
+              title="Sentinel"
+              description="Identity management and security auditing."
+              color="silver"
+            />
+
+            {/* 5. Synapxis (Amber) */}
+            <ProductCard 
+              href="/docs/synapxis"
+              icon={<Image src="/logo2.png" alt="Synapxis" width={40} height={40} className="object-contain" />}
+              title="Synapxis"
+              description="Graph view interface with jrnl integration."
+              color="amber"
+            />
+
+            {/* 6. Toxic (Red) */}
+            <ProductCard 
+              href="/docs/toxic"
+              icon={<Image src="/logo6.png" alt="Toxic" width={40} height={40} className="object-contain" />}
+              title="Toxic"
+              description="High-performance VirusTotal dashboard."
+              color="red"
+            />
+
           </div>
         </div>
       </section>
 
-      {/* --- Footer --- */}
       <footer className="py-8 text-center text-slate-600 text-sm border-t border-slate-900">
         <p>&copy; {new Date().getFullYear()} CodeFXR. All rights reserved.</p>
       </footer>
@@ -159,14 +126,15 @@ export default function Home() {
 }
 
 function ProductCard({ icon, title, description, color, href }: any) {
-  
   const theme = {
     green: { styles: "hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.3)]" },
     cyan: { styles: "hover:shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)]" },
     amber: { styles: "hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]" },
     blue: { styles: "hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]" },
     silver: { styles: "hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)]" },
-  }[color as "green" | "cyan" | "amber" | "blue" | "silver"] || { 
+    purple: { styles: "hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.3)]" },
+    red: { styles: "hover:shadow-[0_0_30px_-5px_rgba(239,68,68,0.3)]" },
+  }[color as "green" | "cyan" | "amber" | "blue" | "silver" | "purple" | "red"] || { 
     styles: "hover:shadow-xl" 
   };
 

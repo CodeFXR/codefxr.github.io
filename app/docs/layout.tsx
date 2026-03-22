@@ -4,15 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { ChevronDown, Github, LayoutGrid } from "lucide-react";
+import { ChevronDown, Github, Linkedin } from "lucide-react";
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  
-  // State to manage which sidebar menus are open
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
 
-  // Automatically open the section for the page you are currently viewing
   useEffect(() => {
     const apps =['cli-studio', 'crolendar', 'lxm', 'sentinel', 'synapxis', 'toxic'];
     const currentApp = apps.find(app => pathname.includes(app));
@@ -38,15 +35,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             <span className="text-xl font-bold tracking-tight group-hover:text-slate-200 transition-colors">CodeFXR</span>
           </Link>
           
-          {/* Right Side Links (Visible on Mobile) */}
           <div className="flex items-center gap-4 md:gap-6 text-slate-400">
-            <Link 
-              href="/#products" 
-              className="hover:text-green-400 transition-colors"
-              aria-label="Applications"
-            >
-              <LayoutGrid className="w-5 h-5" />
-            </Link>
             <Link 
               href="https://github.com/CodeFXR/codefxr.github.io" 
               target="_blank" 
@@ -63,7 +52,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
       <div className="flex flex-col md:flex-row max-w-7xl mx-auto pt-24">
         
         {/* --- COLLAPSIBLE SIDEBAR --- */}
-        <aside className="w-full md:w-64 shrink-0 md:border-r border-slate-800 md:min-h-[calc(100vh-6rem)] px-6 py-8 bg-slate-950 md:sticky md:top-24 self-start max-h-[calc(100vh-6rem)] overflow-y-auto">
+        <aside className="w-full md:w-64 shrink-0 md:border-r border-slate-800 md:min-h-[calc(100vh-6rem)] px-6 py-8 bg-slate-950 md:sticky md:top-24 self-start max-h-[calc(100vh-6rem)] overflow-y-auto flex flex-col">
           
           <div className="mb-8">
             <Link href="/docs" className={`text-sm font-bold ${pathname === '/docs' ? 'text-white' : 'text-slate-500 hover:text-slate-300'}`}>
@@ -162,7 +151,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           </div>
 
           {/* 6. TOXIC (Red) */}
-          <div className="mb-4">
+          <div className="mb-8">
             <button onClick={() => toggleSection('toxic')} className="w-full flex items-center justify-between group mb-2 cursor-pointer">
                 <span className={`font-bold text-sm uppercase tracking-wider ${openSections['toxic'] ? 'text-red-400' : 'text-slate-500 group-hover:text-red-400 transition-colors'}`}>
                     Toxic
@@ -174,6 +163,14 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                     <li><Link href="/docs/toxic" className="block px-4 py-1.5 text-sm text-slate-400 hover:text-white hover:border-l hover:border-white -ml-[1px]">Overview</Link></li>
                 </ul>
             )}
+          </div>
+
+          {/* SIDEBAR FOOTER LINKS */}
+          <div className="mt-auto pt-8 border-t border-slate-800 flex gap-4 text-slate-500">
+            <Link href="/about" className="hover:text-white transition-colors text-sm font-medium">About</Link>
+            <Link href="https://www.linkedin.com/company/codefxr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+              <Linkedin className="w-5 h-5" />
+            </Link>
           </div>
 
         </aside>

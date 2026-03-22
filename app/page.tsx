@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Github, LayoutGrid } from "lucide-react";
+import { ArrowRight, Github, LayoutGrid, Linkedin } from "lucide-react";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
             </Link>
           </div>
           
-          {/* Right Side Links (Visible on Mobile) */}
+          {/* Right Side Links (Applications Logo ONLY on this page) */}
           <div className="flex items-center gap-4 md:gap-6 text-slate-400">
             <Link 
               href="#products" 
@@ -75,69 +75,29 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Application Suite</h2>
           
-          {/* 3 Column Grid & Alphabetical Order */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            {/* 1. CLI-Studio (Green) */}
-            <ProductCard 
-              href="/docs/cli-studio"
-              icon={<Image src="/logo1.png" alt="CLI-Studio" width={40} height={40} className="object-contain" />}
-              title="CLI-Studio"
-              description="Image, video and audio manipulation."
-              color="green" 
-            />
-
-            {/* 2. Crolendar (Purple) */}
-            <ProductCard 
-              href="/docs/crolendar"
-              icon={<Image src="/logo5.png" alt="Crolendar" width={40} height={40} className="object-contain" />}
-              title="Crolendar"
-              description="Visual interface for cron job management."
-              color="purple"
-            />
-
-            {/* 3. LXM (Blue) */}
-            <ProductCard 
-              href="/docs/lxm"
-              icon={<Image src="/logo3.png" alt="LXM" width={40} height={40} className="object-contain" />}
-              title="LXM"
-              description="Lightweight asynchronous file manager."
-              color="blue"
-            />
-
-            {/* 4. Sentinel (Silver) */}
-            <ProductCard 
-              href="/docs/sentinel"
-              icon={<Image src="/logo4.png" alt="Sentinel" width={40} height={40} className="object-contain" />}
-              title="Sentinel"
-              description="Identity management and security auditing."
-              color="silver"
-            />
-
-            {/* 5. Synapxis (Amber) */}
-            <ProductCard 
-              href="/docs/synapxis"
-              icon={<Image src="/logo2.png" alt="Synapxis" width={40} height={40} className="object-contain" />}
-              title="Synapxis"
-              description="Terminal-based Knowledge Graph."
-              color="amber"
-            />
-
-            {/* 6. Toxic (Red) */}
-            <ProductCard 
-              href="/docs/toxic"
-              icon={<Image src="/logo6.png" alt="Toxic" width={40} height={40} className="object-contain" />}
-              title="Toxic"
-              description="High-performance VirusTotal dashboard."
-              color="red"
-            />
-
+            <ProductCard href="/docs/cli-studio" icon={<Image src="/logo1.png" alt="CLI-Studio" width={40} height={40} className="object-contain" />} title="CLI-Studio" description="Image, video and audio manipulation." color="green" />
+            <ProductCard href="/docs/crolendar" icon={<Image src="/logo5.png" alt="Crolendar" width={40} height={40} className="object-contain" />} title="Crolendar" description="Visual interface for cron job management." color="purple" />
+            <ProductCard href="/docs/lxm" icon={<Image src="/logo3.png" alt="LXM" width={40} height={40} className="object-contain" />} title="LXM" description="Lightweight asynchronous file manager." color="blue" />
+            <ProductCard href="/docs/sentinel" icon={<Image src="/logo4.png" alt="Sentinel" width={40} height={40} className="object-contain" />} title="Sentinel" description="Identity management and security auditing." color="silver" />
+            <ProductCard href="/docs/synapxis" icon={<Image src="/logo2.png" alt="Synapxis" width={40} height={40} className="object-contain" />} title="Synapxis" description="Terminal-based Knowledge Graph." color="amber" />
+            <ProductCard href="/docs/toxic" icon={<Image src="/logo6.png" alt="Toxic" width={40} height={40} className="object-contain" />} title="Toxic" description="High-performance VirusTotal dashboard." color="red" />
           </div>
         </div>
       </section>
 
-      <footer className="py-8 text-center text-slate-600 text-sm border-t border-slate-900">
-        <p>&copy; {new Date().getFullYear()} CodeFXR. All rights reserved.</p>
+      {/* --- Footer --- */}
+      <footer className="py-10 border-t border-slate-900 bg-slate-950 flex flex-col items-center justify-center gap-6">
+        <div className="flex items-center gap-6 text-slate-500">
+          <Link href="/about" className="hover:text-white transition-colors text-sm font-medium">About</Link>
+          <Link href="https://github.com/CodeFXR/codefxr.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="GitHub">
+            <Github className="w-5 h-5" />
+          </Link>
+          <Link href="https://www.linkedin.com/company/codefxr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors" aria-label="LinkedIn">
+            <Linkedin className="w-5 h-5" />
+          </Link>
+        </div>
+        <p className="text-slate-600 text-sm">&copy; {new Date().getFullYear()} CodeFXR. All rights reserved.</p>
       </footer>
     </main>
   );

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { Github, LayoutGrid, Info, Linkedin } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -17,6 +17,13 @@ export default function AboutPage() {
           </Link>
           
           <div className="flex items-center gap-4 md:gap-6 text-slate-400">
+            <Link 
+              href="/#products" 
+              className="hover:text-green-400 transition-colors"
+              aria-label="Applications"
+            >
+              <LayoutGrid className="w-5 h-5" />
+            </Link>
             <Link 
               href="https://github.com/CodeFXR/codefxr.github.io" 
               target="_blank" 
@@ -65,9 +72,8 @@ export default function AboutPage() {
       {/* --- Footer --- */}
       <footer className="py-10 border-t border-slate-900 bg-slate-950 flex flex-col items-center justify-center gap-6 mt-auto">
         <div className="flex items-center gap-6 text-slate-500">
-          <Link href="/about" className="text-white transition-colors text-sm font-bold">About</Link>
-          <Link href="https://github.com/CodeFXR/codefxr.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="GitHub">
-            <Github className="w-5 h-5" />
+          <Link href="/about" aria-label="About CodeFXR" className="text-white transition-colors">
+            <Info className="w-5 h-5" />
           </Link>
           <Link href="https://www.linkedin.com/company/codefxr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors" aria-label="LinkedIn">
             <Linkedin className="w-5 h-5" />

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Github, LayoutGrid, Linkedin } from "lucide-react";
+import { Github, LayoutGrid, Info, Linkedin } from "lucide-react";
 
 export default function Home() {
   return (
@@ -18,7 +18,6 @@ export default function Home() {
             </Link>
           </div>
           
-          {/* Right Side Links (Applications Logo ONLY on this page) */}
           <div className="flex items-center gap-4 md:gap-6 text-slate-400">
             <Link 
               href="#products" 
@@ -87,11 +86,10 @@ export default function Home() {
       </section>
 
       {/* --- Footer --- */}
-      <footer className="py-10 border-t border-slate-900 bg-slate-950 flex flex-col items-center justify-center gap-6">
+      <footer className="py-10 border-t border-slate-900 bg-slate-950 flex flex-col items-center justify-center gap-6 mt-auto">
         <div className="flex items-center gap-6 text-slate-500">
-          <Link href="/about" className="hover:text-white transition-colors text-sm font-medium">About</Link>
-          <Link href="https://github.com/CodeFXR/codefxr.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="GitHub">
-            <Github className="w-5 h-5" />
+          <Link href="/about" className="hover:text-white transition-colors" aria-label="About CodeFXR">
+            <Info className="w-5 h-5" />
           </Link>
           <Link href="https://www.linkedin.com/company/codefxr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors" aria-label="LinkedIn">
             <Linkedin className="w-5 h-5" />
@@ -124,7 +122,6 @@ function ProductCard({ icon, title, description, color, href }: any) {
         </div>
         <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
           {title}
-          <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
         </h3>
         <p className="text-slate-400 leading-relaxed text-sm">
           {description}

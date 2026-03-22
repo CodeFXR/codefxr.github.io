@@ -9,7 +9,7 @@ export default function DocsHome() {
         Browse detailed guides, API references, and configuration manuals for the CodeFXR ecosystem.
       </p>
 
-      {/* App List Grid (Restored Old Hub Style) */}
+      {/* App List Grid */}
       <div className="mb-12">
         <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-800">
             <Book className="w-5 h-5 text-blue-400" /> Applications
@@ -20,7 +20,7 @@ export default function DocsHome() {
             
             {/* 1. CLI-Studio */}
             <Link href="/docs/cli-studio" className="block p-6 bg-slate-900/30 border border-slate-800 rounded-xl hover:bg-slate-900 hover:border-green-500/50 hover:shadow-[0_0_20px_-5px_rgba(34,197,94,0.15)] transition-all group hover:-translate-y-1">
-                <span className="inline-block px-2 py-1 rounded bg-green-500/10 text-green-400 text-[10px] uppercase font-bold border border-green-500/20 mb-3">v1.0.0 Stable</span>
+                <span className="inline-block px-2 py-1 rounded bg-green-500/10 text-green-400 text-[10px] uppercase font-bold border border-green-500/20 mb-3">v1.0 Stable</span>
                 <h3 className="text-lg font-bold text-slate-200 group-hover:text-green-400 transition-colors mb-2">CLI-Studio</h3>
                 <p className="text-sm text-slate-500">Media manipulation</p>
             </Link>

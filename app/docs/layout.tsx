@@ -4,11 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { ChevronDown, Github, Linkedin } from "lucide-react";
+import { ChevronDown, Github, LayoutGrid, Info, Linkedin } from "lucide-react";
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const[openSections, setOpenSections] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const apps =['cli-studio', 'crolendar', 'lxm', 'sentinel', 'synapxis', 'toxic'];
@@ -36,13 +36,10 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           </Link>
           
           <div className="flex items-center gap-4 md:gap-6 text-slate-400">
-            <Link 
-              href="https://github.com/CodeFXR/codefxr.github.io" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="hover:text-white transition-colors"
-              aria-label="GitHub Repository"
-            >
+            <Link href="/#products" className="hover:text-green-400 transition-colors" aria-label="Applications">
+              <LayoutGrid className="w-5 h-5" />
+            </Link>
+            <Link href="https://github.com/CodeFXR/codefxr.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="GitHub Repository">
               <Github className="w-5 h-5" />
             </Link>
           </div>
@@ -167,8 +164,10 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
 
           {/* SIDEBAR FOOTER LINKS */}
           <div className="mt-auto pt-8 border-t border-slate-800 flex gap-4 text-slate-500">
-            <Link href="/about" className="hover:text-white transition-colors text-sm font-medium">About</Link>
-            <Link href="https://www.linkedin.com/company/codefxr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+            <Link href="/about" aria-label="About CodeFXR" className="hover:text-white transition-colors">
+              <Info className="w-5 h-5" />
+            </Link>
+            <Link href="https://www.linkedin.com/company/codefxr/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors" aria-label="LinkedIn">
               <Linkedin className="w-5 h-5" />
             </Link>
           </div>

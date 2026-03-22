@@ -53,7 +53,7 @@ export default function GetStarted() {
             <div className="relative z-10">
               <h2 className="text-2xl font-bold text-white mb-2">CLI-Studio</h2>
               {/* UPDATED TO v1.0.0 STABLE */}
-              <span className="inline-block px-2 py-1 rounded bg-green-500/10 text-green-400 text-xs border border-green-500/20 mb-6">v1.0.0 Stable</span>
+              <span className="inline-block px-2 py-1 rounded bg-green-500/10 text-green-400 text-xs border border-green-500/20 mb-6">v1.0 Stable</span>
               
               <div className="mb-2 text-sm text-slate-400">Run auto-installer:</div>
               <div className="bg-slate-950 rounded-lg p-4 border border-slate-800 font-mono text-xs text-white mb-8 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-slate-700">

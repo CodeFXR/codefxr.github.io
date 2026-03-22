@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HelpCircle, ArrowRight, Book, Terminal } from "lucide-react";
+import { HelpCircle, ArrowRight, Book } from "lucide-react";
 
 export default function DocsHome() {
   return (
@@ -9,93 +9,78 @@ export default function DocsHome() {
         Browse detailed guides, API references, and configuration manuals for the CodeFXR ecosystem.
       </p>
 
-      <div className="grid md:grid-cols-2 gap-12">
+      {/* App List Grid (Restored Old Hub Style) */}
+      <div className="mb-12">
+        <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-800">
+            <Book className="w-5 h-5 text-blue-400" /> Applications
+        </h2>
         
-        {/* Column 1: Application Guides */}
-        <div>
-            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-800">
-                <Book className="w-5 h-5 text-blue-400" /> Application Guides
-            </h2>
+        {/* 3 Column Grid Alphabetical */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div className="space-y-8">
-                {/* CLI-Studio Group */}
-                <div>
-                    <Link href="/docs/cli-studio" className="text-lg font-semibold text-green-400 hover:underline mb-2 block">CLI-Studio</Link>
-                    <ul className="space-y-2 text-sm text-slate-400 ml-1">
-                        <li><Link href="/docs/cli-studio#features" className="hover:text-white transition-colors">• Batch Processing & Tools</Link></li>
-                        <li><Link href="/docs/cli-studio#installation" className="hover:text-white transition-colors">• Installation Guide</Link></li>
-                        <li><Link href="/docs/cli-studio#capabilities" className="hover:text-white transition-colors">• Media Capabilities</Link></li>
-                    </ul>
-                </div>
-
-                {/* Sentinel Group */}
-                <div>
-                    <Link href="/docs/sentinel" className="text-lg font-semibold text-slate-200 hover:underline mb-2 block">Sentinel</Link>
-                    <ul className="space-y-2 text-sm text-slate-400 ml-1">
-                        <li><Link href="/docs/sentinel#features" className="hover:text-white transition-colors">• Diagnostics & Compliance</Link></li>
-                        <li><Link href="/docs/sentinel#installation" className="hover:text-white transition-colors">• Setting up Smart Cards</Link></li>
-                        <li><Link href="/docs/sentinel#troubleshooting" className="hover:text-white transition-colors">• Fixing Error 20 (DoD Certs)</Link></li>
-                    </ul>
-                </div>
-
-                {/* Synapxis Group */}
-                <div>
-                    <Link href="/docs/synapxis" className="text-lg font-semibold text-orange-400 hover:underline mb-2 block">Synapxis</Link>
-                    <ul className="space-y-2 text-sm text-slate-400 ml-1">
-                        <li><Link href="/docs/synapxis#features" className="hover:text-white transition-colors">• Graph Visualization</Link></li>
-                        <li><Link href="/docs/synapxis#installation" className="hover:text-white transition-colors">• Hybrid Engine Setup</Link></li>
-                        <li><Link href="/docs/synapxis#troubleshooting" className="hover:text-white transition-colors">• Troubleshooting Render Issues</Link></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        {/* Column 2: Ecosystem & Help */}
-        <div>
-            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-800">
-                <Terminal className="w-5 h-5 text-purple-400" /> Upcoming Tools
-            </h2>
-            
-            <div className="bg-slate-900/30 p-6 rounded-xl border border-slate-800 mb-8">
-                <h3 className="font-bold text-white mb-2">In Active Development</h3>
-                <p className="text-sm text-slate-400 mb-4">
-                    Documentation for these tools will be published upon v1.0 release.
-                </p>
-                <ul className="space-y-2 text-sm">
-                    <li>
-                        <Link href="/docs/crolendar" className="flex items-center justify-between text-slate-400 hover:text-purple-400 transition-colors">
-                            Crolendar <ArrowRight className="w-3 h-3" />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/docs/lxm" className="flex items-center justify-between text-slate-400 hover:text-blue-400 transition-colors">
-                            LXM <ArrowRight className="w-3 h-3" />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/docs/toxic" className="flex items-center justify-between text-slate-400 hover:text-red-400 transition-colors">
-                            Toxic <ArrowRight className="w-3 h-3" />
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-
-            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-800">
-                <HelpCircle className="w-5 h-5 text-teal-400" /> Need Help?
-            </h2>
-            <p className="text-sm text-slate-400 mb-4">
-                If you encounter bugs or have feature requests, please open an issue on our GitHub repositories.
-            </p>
-            <Link 
-                href="https://github.com/CodeFXR" 
-                target="_blank" 
-                className="inline-flex items-center text-sm font-bold text-white bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg transition-colors"
-            >
-                Visit GitHub Organization <ArrowRight className="w-4 h-4 ml-2" />
+            {/* 1. CLI-Studio */}
+            <Link href="/docs/cli-studio" className="block p-6 bg-slate-900/30 border border-slate-800 rounded-xl hover:bg-slate-900 hover:border-green-500/50 hover:shadow-[0_0_20px_-5px_rgba(34,197,94,0.15)] transition-all group hover:-translate-y-1">
+                <span className="inline-block px-2 py-1 rounded bg-green-500/10 text-green-400 text-[10px] uppercase font-bold border border-green-500/20 mb-3">v1.0.0 Stable</span>
+                <h3 className="text-lg font-bold text-slate-200 group-hover:text-green-400 transition-colors mb-2">CLI-Studio</h3>
+                <p className="text-sm text-slate-500">Media manipulation</p>
             </Link>
-        </div>
 
+            {/* 2. Crolendar */}
+            <Link href="/docs/crolendar" className="block p-6 bg-slate-900/30 border border-slate-800 rounded-xl hover:bg-slate-900 hover:border-purple-500/50 hover:shadow-[0_0_20px_-5px_rgba(168,85,247,0.15)] transition-all group hover:-translate-y-1">
+                <span className="inline-block px-2 py-1 rounded bg-yellow-500/10 text-yellow-500 text-[10px] uppercase font-bold border border-yellow-500/20 mb-3">In Development</span>
+                <h3 className="text-lg font-bold text-slate-200 group-hover:text-purple-400 transition-colors mb-2">Crolendar</h3>
+                <p className="text-sm text-slate-500">Cron visualization</p>
+            </Link>
+
+            {/* 3. LXM */}
+            <Link href="/docs/lxm" className="block p-6 bg-slate-900/30 border border-slate-800 rounded-xl hover:bg-slate-900 hover:border-blue-500/50 hover:shadow-[0_0_20px_-5px_rgba(59,130,246,0.15)] transition-all group hover:-translate-y-1">
+                <span className="inline-block px-2 py-1 rounded bg-yellow-500/10 text-yellow-500 text-[10px] uppercase font-bold border border-yellow-500/20 mb-3">In Development</span>
+                <h3 className="text-lg font-bold text-slate-200 group-hover:text-blue-400 transition-colors mb-2">LXM</h3>
+                <p className="text-sm text-slate-500">Async file manager</p>
+            </Link>
+
+            {/* 4. Sentinel */}
+            <Link href="/docs/sentinel" className="block p-6 bg-slate-900/30 border border-slate-800 rounded-xl hover:bg-slate-900 hover:border-white/50 hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.15)] transition-all group hover:-translate-y-1">
+                <span className="inline-block px-2 py-1 rounded bg-blue-500/10 text-blue-300 text-[10px] uppercase font-bold border border-blue-500/20 mb-3">v1.0 Stable</span>
+                <h3 className="text-lg font-bold text-slate-200 group-hover:text-white transition-colors mb-2">Sentinel</h3>
+                <p className="text-sm text-slate-500">Identity manager</p>
+            </Link>
+
+            {/* 5. Synapxis */}
+            <Link href="/docs/synapxis" className="block p-6 bg-slate-900/30 border border-slate-800 rounded-xl hover:bg-slate-900 hover:border-orange-500/50 hover:shadow-[0_0_20px_-5px_rgba(245,158,11,0.15)] transition-all group hover:-translate-y-1">
+                <span className="inline-block px-2 py-1 rounded bg-teal-500/10 text-teal-400 text-[10px] uppercase font-bold border border-teal-500/20 mb-3">v1.0 Stable</span>
+                <h3 className="text-lg font-bold text-slate-200 group-hover:text-orange-400 transition-colors mb-2">Synapxis</h3>
+                <p className="text-sm text-slate-500">Knowledge graph</p>
+            </Link>
+
+            {/* 6. Toxic */}
+            <Link href="/docs/toxic" className="block p-6 bg-slate-900/30 border border-slate-800 rounded-xl hover:bg-slate-900 hover:border-red-500/50 hover:shadow-[0_0_20px_-5px_rgba(239,68,68,0.15)] transition-all group hover:-translate-y-1">
+                <span className="inline-block px-2 py-1 rounded bg-yellow-500/10 text-yellow-500 text-[10px] uppercase font-bold border border-yellow-500/20 mb-3">In Development</span>
+                <h3 className="text-lg font-bold text-slate-200 group-hover:text-red-400 transition-colors mb-2">Toxic</h3>
+                <p className="text-sm text-slate-500">VirusTotal TUI</p>
+            </Link>
+
+        </div>
       </div>
+
+      {/* Need Help Section */}
+      <div className="bg-slate-900/30 p-8 rounded-xl border border-slate-800">
+        <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <HelpCircle className="w-6 h-6 text-purple-400" /> Need Help?
+        </h2>
+        <p className="text-slate-400 mb-6 leading-relaxed">
+            If you encounter bugs or have feature requests, please open an issue on our GitHub repositories.
+        </p>
+        
+        <Link 
+            href="https://github.com/CodeFXR" 
+            target="_blank" 
+            className="inline-flex items-center px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold transition-colors border border-slate-700"
+        >
+            Visit GitHub Organization <ArrowRight className="w-4 h-4 ml-2" />
+        </Link>
+      </div>
+
     </div>
   );
 }

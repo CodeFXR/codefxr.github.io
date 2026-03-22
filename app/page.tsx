@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Github } from "lucide-react"; // Added Github icon
+import { ArrowRight, Github, LayoutGrid } from "lucide-react";
 
 export default function Home() {
   return (
@@ -18,11 +18,15 @@ export default function Home() {
             </Link>
           </div>
           
-          {/* Right Side Links (Now with items-center for vertical alignment) */}
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
-            <Link href="#products" className="hover:text-green-400 transition-colors">Applications</Link>
-            
-            {/* GitHub Logo Icon */}
+          {/* Right Side Links (Visible on Mobile) */}
+          <div className="flex items-center gap-4 md:gap-6 text-slate-400">
+            <Link 
+              href="#products" 
+              className="hover:text-green-400 transition-colors"
+              aria-label="Applications"
+            >
+              <LayoutGrid className="w-5 h-5" />
+            </Link>
             <Link 
               href="https://github.com/CodeFXR/codefxr.github.io" 
               target="_blank" 
@@ -110,7 +114,7 @@ export default function Home() {
               color="silver"
             />
 
-            {/* 5. Synapxis (Amber) - UPDATED DESCRIPTION */}
+            {/* 5. Synapxis (Amber) */}
             <ProductCard 
               href="/docs/synapxis"
               icon={<Image src="/logo2.png" alt="Synapxis" width={40} height={40} className="object-contain" />}

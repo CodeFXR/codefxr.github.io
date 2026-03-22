@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react"; // Added Github icon
 
 export default function Home() {
   return (
@@ -10,14 +10,28 @@ export default function Home() {
       <nav className="fixed top-0 z-50 w-full border-b border-slate-800 bg-slate-950/60 backdrop-blur-md">
         <div className="flex items-center justify-between px-6 py-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
-            <div className="relative w-8 h-8">
-             <Image src="/logo.png" alt="CodeFXR Logo" fill className="object-contain" />
-            </div>
-            <span className="text-xl font-bold tracking-tight">CodeFXR</span>
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="relative w-8 h-8">
+               <Image src="/logo.png" alt="CodeFXR Logo" fill className="object-contain" />
+              </div>
+              <span className="text-xl font-bold tracking-tight group-hover:text-slate-200 transition-colors">CodeFXR</span>
+            </Link>
           </div>
-          <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+          
+          {/* Right Side Links (Now with items-center for vertical alignment) */}
+          <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
             <Link href="#products" className="hover:text-green-400 transition-colors">Applications</Link>
-            <Link href="https://github.com/CodeFXR/codefxr.github.io" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">GitHub</Link>
+            
+            {/* GitHub Logo Icon */}
+            <Link 
+              href="https://github.com/CodeFXR/codefxr.github.io" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-white transition-colors"
+              aria-label="GitHub Repository"
+            >
+              <Github className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </nav>
@@ -57,7 +71,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Application Suite</h2>
           
-          {/* 3 Column Grid */}
+          {/* 3 Column Grid & Alphabetical Order */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* 1. CLI-Studio (Green) */}
@@ -96,12 +110,12 @@ export default function Home() {
               color="silver"
             />
 
-            {/* 5. Synapxis (Amber) */}
+            {/* 5. Synapxis (Amber) - UPDATED DESCRIPTION */}
             <ProductCard 
               href="/docs/synapxis"
               icon={<Image src="/logo2.png" alt="Synapxis" width={40} height={40} className="object-contain" />}
               title="Synapxis"
-              description="Graph view interface with jrnl integration."
+              description="Terminal-based Knowledge Graph."
               color="amber"
             />
 

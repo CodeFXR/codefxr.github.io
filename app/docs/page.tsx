@@ -1,71 +1,101 @@
 import Link from "next/link";
-import { HelpCircle, ArrowRight, Book } from "lucide-react";
+import { HelpCircle, ArrowRight, Book, Terminal } from "lucide-react";
 
 export default function DocsHome() {
   return (
     <div className="max-w-4xl">
       <h1 className="text-4xl font-bold text-white mb-6">Documentation Hub</h1>
       <p className="text-xl text-slate-400 mb-12 leading-relaxed">
-        Browse detailed guides, references, and configuration manuals for the CodeFXR ecosystem.
+        Browse detailed guides, API references, and configuration manuals for the CodeFXR ecosystem.
       </p>
 
-      {/* App List */}
-      <div className="mb-12">
-        <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-800">
-            <Book className="w-5 h-5 text-blue-400" /> Applications
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-12">
+        
+        {/* Column 1: Application Guides */}
+        <div>
+            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-800">
+                <Book className="w-5 h-5 text-blue-400" /> Application Guides
+            </h2>
             
-            <Link href="/docs/cli-studio" className="block p-4 bg-slate-900/30 border border-slate-800 rounded-lg hover:bg-slate-900 hover:border-green-500/50 transition-all group">
-                <h3 className="font-bold text-slate-300 group-hover:text-green-400">CLI-Studio</h3>
-                <p className="text-sm text-slate-500">Media manipulation</p>
-            </Link>
+            <div className="space-y-8">
+                {/* CLI-Studio Group */}
+                <div>
+                    <Link href="/docs/cli-studio" className="text-lg font-semibold text-green-400 hover:underline mb-2 block">CLI-Studio</Link>
+                    <ul className="space-y-2 text-sm text-slate-400 ml-1">
+                        <li><Link href="/docs/cli-studio#features" className="hover:text-white transition-colors">• Batch Processing & Tools</Link></li>
+                        <li><Link href="/docs/cli-studio#installation" className="hover:text-white transition-colors">• Installation Guide</Link></li>
+                        <li><Link href="/docs/cli-studio#capabilities" className="hover:text-white transition-colors">• Media Capabilities</Link></li>
+                    </ul>
+                </div>
 
-            <Link href="/docs/crolendar" className="block p-4 bg-slate-900/30 border border-slate-800 rounded-lg hover:bg-slate-900 hover:border-purple-500/50 transition-all group">
-                <h3 className="font-bold text-slate-300 group-hover:text-purple-400">Crolendar</h3>
-                <p className="text-sm text-slate-500">Cron visualization</p>
-            </Link>
+                {/* Sentinel Group */}
+                <div>
+                    <Link href="/docs/sentinel" className="text-lg font-semibold text-slate-200 hover:underline mb-2 block">Sentinel</Link>
+                    <ul className="space-y-2 text-sm text-slate-400 ml-1">
+                        <li><Link href="/docs/sentinel#features" className="hover:text-white transition-colors">• Diagnostics & Compliance</Link></li>
+                        <li><Link href="/docs/sentinel#installation" className="hover:text-white transition-colors">• Setting up Smart Cards</Link></li>
+                        <li><Link href="/docs/sentinel#troubleshooting" className="hover:text-white transition-colors">• Fixing Error 20 (DoD Certs)</Link></li>
+                    </ul>
+                </div>
 
-            <Link href="/docs/lxm" className="block p-4 bg-slate-900/30 border border-slate-800 rounded-lg hover:bg-slate-900 hover:border-blue-500/50 transition-all group">
-                <h3 className="font-bold text-slate-300 group-hover:text-blue-400">LXM</h3>
-                <p className="text-sm text-slate-500">File manager</p>
-            </Link>
-
-            <Link href="/docs/sentinel" className="block p-4 bg-slate-900/30 border border-slate-800 rounded-lg hover:bg-slate-900 hover:border-white/50 transition-all group">
-                <h3 className="font-bold text-slate-300 group-hover:text-white">Sentinel</h3>
-                <p className="text-sm text-slate-500">Identity manager</p>
-            </Link>
-
-            <Link href="/docs/synapxis" className="block p-4 bg-slate-900/30 border border-slate-800 rounded-lg hover:bg-slate-900 hover:border-orange-500/50 transition-all group">
-                <h3 className="font-bold text-slate-300 group-hover:text-orange-400">Synapxis</h3>
-                <p className="text-sm text-slate-500">Knowledge graph</p>
-            </Link>
-
-            <Link href="/docs/toxic" className="block p-4 bg-slate-900/30 border border-slate-800 rounded-lg hover:bg-slate-900 hover:border-red-500/50 transition-all group">
-                <h3 className="font-bold text-slate-300 group-hover:text-red-400">Toxic</h3>
-                <p className="text-sm text-slate-500">VirusTotal TUI</p>
-            </Link>
-
+                {/* Synapxis Group */}
+                <div>
+                    <Link href="/docs/synapxis" className="text-lg font-semibold text-orange-400 hover:underline mb-2 block">Synapxis</Link>
+                    <ul className="space-y-2 text-sm text-slate-400 ml-1">
+                        <li><Link href="/docs/synapxis#features" className="hover:text-white transition-colors">• Graph Visualization</Link></li>
+                        <li><Link href="/docs/synapxis#installation" className="hover:text-white transition-colors">• Hybrid Engine Setup</Link></li>
+                        <li><Link href="/docs/synapxis#troubleshooting" className="hover:text-white transition-colors">• Troubleshooting Render Issues</Link></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
 
-      {/* Need Help */}
-      <div className="bg-slate-900/30 p-8 rounded-xl border border-slate-800">
-        <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-            <HelpCircle className="w-6 h-6 text-purple-400" /> Need Help?
-        </h2>
-        <p className="text-slate-400 mb-6 leading-relaxed">
-            If you encounter bugs or have feature requests, please open an issue on our GitHub repositories.
-        </p>
-        <Link 
-            href="https://github.com/CodeFXR" 
-            target="_blank" 
-            className="inline-flex items-center px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-semibold transition-colors border border-slate-700"
-        >
-            Visit GitHub Organization <ArrowRight className="w-4 h-4 ml-2" />
-        </Link>
-      </div>
+        {/* Column 2: Ecosystem & Help */}
+        <div>
+            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-800">
+                <Terminal className="w-5 h-5 text-purple-400" /> Upcoming Tools
+            </h2>
+            
+            <div className="bg-slate-900/30 p-6 rounded-xl border border-slate-800 mb-8">
+                <h3 className="font-bold text-white mb-2">In Active Development</h3>
+                <p className="text-sm text-slate-400 mb-4">
+                    Documentation for these tools will be published upon v1.0 release.
+                </p>
+                <ul className="space-y-2 text-sm">
+                    <li>
+                        <Link href="/docs/crolendar" className="flex items-center justify-between text-slate-400 hover:text-purple-400 transition-colors">
+                            Crolendar <ArrowRight className="w-3 h-3" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/docs/lxm" className="flex items-center justify-between text-slate-400 hover:text-blue-400 transition-colors">
+                            LXM <ArrowRight className="w-3 h-3" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/docs/toxic" className="flex items-center justify-between text-slate-400 hover:text-red-400 transition-colors">
+                            Toxic <ArrowRight className="w-3 h-3" />
+                        </Link>
+                    </li>
+                </ul>
+            </div>
 
+            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 pb-2 border-b border-slate-800">
+                <HelpCircle className="w-5 h-5 text-teal-400" /> Need Help?
+            </h2>
+            <p className="text-sm text-slate-400 mb-4">
+                If you encounter bugs or have feature requests, please open an issue on our GitHub repositories.
+            </p>
+            <Link 
+                href="https://github.com/CodeFXR" 
+                target="_blank" 
+                className="inline-flex items-center text-sm font-bold text-white bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg transition-colors"
+            >
+                Visit GitHub Organization <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+        </div>
+
+      </div>
     </div>
   );
 }

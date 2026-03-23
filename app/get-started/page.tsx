@@ -145,7 +145,7 @@ export default function GetStarted() {
             <div className="relative z-10 flex flex-col h-full w-full">
               <div>
                 <h2 className="text-2xl font-bold text-white mb-2">Synapxis</h2>
-                <span className="inline-block px-2 py-1 rounded bg-teal-500/10 text-teal-400 text-xs border border-teal-500/20 mb-6">v1.0 Stable</span>
+                <span className="inline-block px-2 py-1 rounded bg-orange-500/10 text-orange-400 text-xs border border-orange-500/20 mb-6">v1.0 Stable</span>
               </div>
               <div className="flex-1"></div>
               <div className="mt-auto">

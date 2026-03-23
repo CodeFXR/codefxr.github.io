@@ -48,7 +48,7 @@ export default function DocsHome() {
 
             {/* 5. Synapxis */}
             <Link href="/docs/synapxis" className="block p-6 bg-slate-900/30 border border-slate-800 rounded-xl hover:bg-slate-900 hover:border-orange-500/50 hover:shadow-[0_0_20px_-5px_rgba(245,158,11,0.15)] transition-all group hover:-translate-y-1">
-                <span className="inline-block px-2 py-1 rounded bg-teal-500/10 text-teal-400 text-[10px] uppercase font-bold border border-teal-500/20 mb-3">v1.0 Stable</span>
+                <span className="inline-block px-2 py-1 rounded bg-orange-500/10 text-orange-400 text-[10px] uppercase font-bold border border-orange-500/20 mb-3">v1.0 Stable</span>
                 <h3 className="text-lg font-bold text-slate-200 group-hover:text-orange-400 transition-colors mb-2">Synapxis</h3>
                 <p className="text-sm text-slate-500">Knowledge graph</p>
             </Link>

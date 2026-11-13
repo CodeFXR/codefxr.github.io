@@ -10,10 +10,6 @@
   <a href="https://github.com/CodeFXR/Crolendar">Crolendar <a>
 </p>
 
-<p align="center">
-  Unleash your terminal!
-</p>
-
 ##
 
 <p align="center">

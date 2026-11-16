@@ -1,6 +1,6 @@
 <h1 align="center">CodeFXR</h1>
 <p align="center">
-  <img src="public/logo.png" alt="CodeFXR Logo" width="150" />
+  <img src="public/roco-full.png" alt="CodeFXR Logo" width="150" />
 </p>
 
 <p align="center">

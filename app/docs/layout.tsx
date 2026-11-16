@@ -30,7 +30,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2 group">
               <div className="relative w-8 h-8">
-                <Image src="/logo.png" alt="CodeFXR Logo" fill className="object-contain" priority />
+                <Image src="/roco-full.png" alt="CodeFXR Logo" fill className="object-contain" priority />
               </div>
               <span className="text-xl font-bold tracking-tight group-hover:text-slate-200 transition-colors">
                 CodeFXR

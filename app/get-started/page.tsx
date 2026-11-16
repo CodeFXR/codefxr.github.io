@@ -14,7 +14,7 @@ export default function GetStarted() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2 group">
               <div className="relative w-8 h-8">
-                <Image src="/logo.png" alt="CodeFXR Logo" fill className="object-contain" priority />
+                <Image src="/roco-full.png" alt="CodeFXR Logo" fill className="object-contain" priority />
               </div>
               <span className="text-xl font-bold tracking-tight group-hover:text-slate-200 transition-colors">
                 CodeFXR
@@ -153,7 +153,7 @@ export default function GetStarted() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <div className="relative w-6 h-6 rounded overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center">
-              <Image src="/logo.png" alt="CodeFXR Logo" fill className="object-contain p-0.5" />
+              <Image src="/roco-head.png" alt="CodeFXR Logo" fill className="object-contain p-0.5" />
             </div>
             <span className="text-sm text-slate-500">
               &copy; {new Date().getFullYear()} CodeFXR. All rights reserved.

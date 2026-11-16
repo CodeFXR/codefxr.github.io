@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "CodeFXR",
   description: "Software made simple for everyday workflows.",
   icons: {
-    icon: '/logo.png',
+    icon: '/roco-head.png',
   },
 };
 
